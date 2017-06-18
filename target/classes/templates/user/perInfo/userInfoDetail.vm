@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="/lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/h-ui.admin/css/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>用户信息待补录列表</title>
+</head>
+<body>
+<div class="page-container">
+    <!-- 用户基本信息-->
+    <div class="cl pd-5  bk-gray mt-20" style="background:#F8F8FF;"> <span style="margin-left:30%;"><strong>用户基本信息</strong></span>  </div>
+
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg">
+            <thead>
+            <tr class="text-c">
+
+                <th>真实姓名</th>
+                <th>电话</th>
+                <th>级别</th>
+                <th width="200">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-c">
+
+                <td>$!user.realname</td>
+                <td>$!user.phone</td>
+                <td>$!user.grade</td>
+                <td class="f-14 td-manage">
+                    <a style="text-decoration:none" class="ml-5" onClick="userBaseShow('用户详细信息','/user/userBaseShow?userid=${user.id}','$!user.id','360','400')" href="javascript:;" title="用户基本信息">基本信息查看</a>
+                    <a style="text-decoration:none" class="ml-5" onClick="userBaseModify('用户基本信息补录','/user/userBaseModify?userid=${user.id}',$user.id)" href="javascript:;" title="用户基本信息补录">补录</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- 用户详细信息-->
+    <div class="cl pd-5  bk-gray mt-20" style="background:#F8F8FF;"> <span style="margin-left:30%;"><strong>用户详细信息</strong></span>  </div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg">
+            <thead>
+            <tr class="text-c">
+
+                <th>性别</th>
+                <th>年龄</th>
+                <th>城市</th>
+                <th width="200">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-c">
+                <td>#if($!userInfo.sex =='M' ) 男 #else 女 #end</td>
+                <td>$!userInfo.age</td>
+                <td>$!userInfo.cityofinfo</td>
+                <td class="f-14 td-manage">
+                    <a style="text-decoration:none" class="ml-5" onClick="userInfoModify('用户详细信息补录','/userInfo/userInfoModify?userInfoId=${userInfo.id}',$userInfo.id)" href="javascript:;" title="用户基本信息补录">补录</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- 用户房产信息-->
+    <div class="cl pd-5  bk-gray mt-20" style="background:#F8F8FF;"> <span style="margin-left:30%;"><strong>用户房产信息</strong></span>  </div>
+    <div class="mt-20">
+        <div class="cl pd-5 bg-1 bk-gray mt-20">
+            <span  class="l">
+                <a  href="javascript:;" onclick="userHouseAdd('新增房产','/house/userHouseAdd?userid=${user.id}')" class="btn btn-primary radius">
+                    <i class="Hui-iconfont">&#xe600;</i> 新增房产
+                </a>
+            </span>
+        </div>
+        <table class="table table-border table-bordered table-bg">
+            <thead>
+            <tr class="text-c">
+
+                <th>房产证编号</th>
+                <th>房产估值</th>
+                <th>年限</th>
+                <th width="200">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach($house in $houses)
+                    <tr class="text-c">
+                        <td>$!house.numofcertificate</td>
+                        <td>$!house.price</td>
+                        <td>$!house.yearsofhouse</td>
+                        <td class="f-14 td-manage">
+                            <a style="text-decoration:none" class="ml-5" onClick="userHouseModify('用户房产信息补录','/house/userHouseModify?houseid=${house.id}',$house.id)" href="javascript:;" title="用户房产信息补录">补录</a>
+                        </td>
+                    </tr>
+                #end
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- 用户车辆信息-->
+    <div class="cl pd-5  bk-gray mt-20" style="background:#F8F8FF;"> <span style="margin-left:30%;"><strong>用户车辆信息</strong></span>  </div>
+    <div class="mt-20">
+
+        <div class="cl pd-5 bg-1 bk-gray mt-20">
+            <span  class="l">
+                <a  href="javascript:;" onclick="userVehicleAdd('新增车辆','/vehicle/userVehicleAdd?userid=${user.id}')" class="btn btn-primary radius">
+                    <i class="Hui-iconfont">&#xe600;</i> 新增车辆
+                </a>
+            </span>
+        </div>
+
+        <table class="table table-border table-bordered table-bg">
+            <thead>
+            <tr class="text-c">
+
+                <th>车型</th>
+                <th>汽车性质</th>
+                <th width="200">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach($vehicle in $vehicles)
+                    <tr class="text-c">
+                        <td>$!vehicle.typeofcar</td>
+                        <td>#if($!vehicle.natureofvehicle =='1' ) 自有无贷 #elseif($!vehicle.natureofvehicle =='2') 自有有贷 #else 其他 #end</td>
+                        <td class="f-14 td-manage">
+                            <a style="text-decoration:none" class="ml-5" onClick="userVehicleModify('用户车辆信息','/vehicle/userVehicleModify?vehicleid=${vehicle.id}',$vehicle.id)" href="javascript:;" title="用户车辆信息">补录</a>
+                        </td>
+                    </tr>
+                #end
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+    $('.table-sort').dataTable({
+        "aaSorting": [[ 0, "asc" ]],//默认第几个排序
+        "bStateSave": true,//状态保存
+        "searching" : false, //去掉搜索框
+        "pading":false,
+        "aoColumnDefs": [
+            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+            {"orderable":false,"aTargets":[]}// 不参与排序的列
+        ]
+    });
+
+
+    /*用户基本信息*/
+    function userBaseShow(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+
+    /*用户基本信息录入*/
+    function userBaseModify(title,url,userid,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+
+    /*用户详细信息录入*/
+    function userInfoModify(title,url,userid,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+
+    /*用户房屋信息录入*/
+    function userHouseModify(title,url,userid,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+    /*用户房产新增*/
+    function userHouseAdd(title,url,id,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+
+    /*用户车辆信息录入*/
+    function userVehicleModify(title,url,userid,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+    /*用户车辆新增*/
+    function userVehicleAdd(title,url,id,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+
+
+    /*用户-删除*/
+    function user_del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '/user/delete',
+                contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+                data:{id:id},
+                success: function(data){
+                    $(obj).parents("tr").remove();
+                    layer.msg(data,{icon:1,time:1000});
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
+    }
+
+
+
+</script>
+</body>
+</html>

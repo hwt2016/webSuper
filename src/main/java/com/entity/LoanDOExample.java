@@ -2,6 +2,7 @@ package com.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class LoanDOExample {
@@ -251,6 +252,32 @@ public class LoanDOExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
+            if (value == null) {
+                throw new RuntimeException("Value for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value.getTime()), property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
+            if (values == null || values.size() == 0) {
+                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
+            }
+            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
+            Iterator<Date> iter = values.iterator();
+            while (iter.hasNext()) {
+                dateList.add(new java.sql.Date(iter.next().getTime()));
+            }
+            addCriterion(condition, dateList, property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
+            if (value1 == null || value2 == null) {
+                throw new RuntimeException("Between values for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
+        }
+
         public Criteria andIdIsNull() {
             addCriterion("id is null");
             return (Criteria) this;
@@ -311,63 +338,63 @@ public class LoanDOExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNull() {
-            addCriterion("user_id is null");
+        public Criteria andUseridIsNull() {
+            addCriterion("userid is null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNotNull() {
-            addCriterion("user_id is not null");
+        public Criteria andUseridIsNotNull() {
+            addCriterion("userid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdEqualTo(Integer value) {
-            addCriterion("user_id =", value, "userId");
+        public Criteria andUseridEqualTo(Integer value) {
+            addCriterion("userid =", value, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotEqualTo(Integer value) {
-            addCriterion("user_id <>", value, "userId");
+        public Criteria andUseridNotEqualTo(Integer value) {
+            addCriterion("userid <>", value, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThan(Integer value) {
-            addCriterion("user_id >", value, "userId");
+        public Criteria andUseridGreaterThan(Integer value) {
+            addCriterion("userid >", value, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("user_id >=", value, "userId");
+        public Criteria andUseridGreaterThanOrEqualTo(Integer value) {
+            addCriterion("userid >=", value, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThan(Integer value) {
-            addCriterion("user_id <", value, "userId");
+        public Criteria andUseridLessThan(Integer value) {
+            addCriterion("userid <", value, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
-            addCriterion("user_id <=", value, "userId");
+        public Criteria andUseridLessThanOrEqualTo(Integer value) {
+            addCriterion("userid <=", value, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIn(List<Integer> values) {
-            addCriterion("user_id in", values, "userId");
+        public Criteria andUseridIn(List<Integer> values) {
+            addCriterion("userid in", values, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotIn(List<Integer> values) {
-            addCriterion("user_id not in", values, "userId");
+        public Criteria andUseridNotIn(List<Integer> values) {
+            addCriterion("userid not in", values, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdBetween(Integer value1, Integer value2) {
-            addCriterion("user_id between", value1, value2, "userId");
+        public Criteria andUseridBetween(Integer value1, Integer value2) {
+            addCriterion("userid between", value1, value2, "userid");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("user_id not between", value1, value2, "userId");
+        public Criteria andUseridNotBetween(Integer value1, Integer value2) {
+            addCriterion("userid not between", value1, value2, "userid");
             return (Criteria) this;
         }
 
@@ -1371,53 +1398,53 @@ public class LoanDOExample {
             return (Criteria) this;
         }
 
-        public Criteria andLoantermEqualTo(Integer value) {
-            addCriterion("loanTerm =", value, "loanterm");
+        public Criteria andLoantermEqualTo(Date value) {
+            addCriterionForJDBCDate("loanTerm =", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermNotEqualTo(Integer value) {
-            addCriterion("loanTerm <>", value, "loanterm");
+        public Criteria andLoantermNotEqualTo(Date value) {
+            addCriterionForJDBCDate("loanTerm <>", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermGreaterThan(Integer value) {
-            addCriterion("loanTerm >", value, "loanterm");
+        public Criteria andLoantermGreaterThan(Date value) {
+            addCriterionForJDBCDate("loanTerm >", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermGreaterThanOrEqualTo(Integer value) {
-            addCriterion("loanTerm >=", value, "loanterm");
+        public Criteria andLoantermGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("loanTerm >=", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermLessThan(Integer value) {
-            addCriterion("loanTerm <", value, "loanterm");
+        public Criteria andLoantermLessThan(Date value) {
+            addCriterionForJDBCDate("loanTerm <", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermLessThanOrEqualTo(Integer value) {
-            addCriterion("loanTerm <=", value, "loanterm");
+        public Criteria andLoantermLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("loanTerm <=", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermIn(List<Integer> values) {
-            addCriterion("loanTerm in", values, "loanterm");
+        public Criteria andLoantermIn(List<Date> values) {
+            addCriterionForJDBCDate("loanTerm in", values, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermNotIn(List<Integer> values) {
-            addCriterion("loanTerm not in", values, "loanterm");
+        public Criteria andLoantermNotIn(List<Date> values) {
+            addCriterionForJDBCDate("loanTerm not in", values, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermBetween(Integer value1, Integer value2) {
-            addCriterion("loanTerm between", value1, value2, "loanterm");
+        public Criteria andLoantermBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("loanTerm between", value1, value2, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermNotBetween(Integer value1, Integer value2) {
-            addCriterion("loanTerm not between", value1, value2, "loanterm");
+        public Criteria andLoantermNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("loanTerm not between", value1, value2, "loanterm");
             return (Criteria) this;
         }
 
@@ -1828,6 +1855,76 @@ public class LoanDOExample {
 
         public Criteria andCardbankNotBetween(String value1, String value2) {
             addCriterion("cardBank not between", value1, value2, "cardbank");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNull() {
+            addCriterion("state is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNotNull() {
+            addCriterion("state is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateEqualTo(String value) {
+            addCriterion("state =", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotEqualTo(String value) {
+            addCriterion("state <>", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThan(String value) {
+            addCriterion("state >", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThanOrEqualTo(String value) {
+            addCriterion("state >=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThan(String value) {
+            addCriterion("state <", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThanOrEqualTo(String value) {
+            addCriterion("state <=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLike(String value) {
+            addCriterion("state like", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotLike(String value) {
+            addCriterion("state not like", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIn(List<String> values) {
+            addCriterion("state in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotIn(List<String> values) {
+            addCriterion("state not in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateBetween(String value1, String value2) {
+            addCriterion("state between", value1, value2, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotBetween(String value1, String value2) {
+            addCriterion("state not between", value1, value2, "state");
             return (Criteria) this;
         }
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>地区添加</title>
+
+</head>
+<body>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <form  id="form-admin-add" class="form form-horizontal" >
+        <div style="margin-left: 25%">
+            省份：
+            <select class="select" name="province" id="province">
+                <option></option>
+            </select>
+            市：
+            <select class="select" name="city" id="city">
+                <option></option>
+            </select>
+            区/县：
+            <select class="select" name="district" id="district">
+                <option></option>
+            </select>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <div style="margin-left: 40%">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input style="border-radius:4px;padding:4px 12px;color:#fff;background-color:#5a98de;border-color:#5a98de;border: solid 1px #ddd;" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/js/address.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="/lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="/h-ui/js/H-ui.min.js"></script>
+    <script type="text/javascript" src="/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+
+
+    <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript" src="/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+    <script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+
+<script type="text/javascript">
+    $(function(){
+        $.initialize({
+            "province":"",//填写初始化显示的省份,名称参考geo.js中,可以为空
+            "city":"",//填写初始化显示的市,名称参考geo.js中，可以为空
+            "districtrict":"",//填写初始化显示的区/县,名称参考geo.js中，可以为空
+            "selectIds":["province","city","district"],//省、市、区对应的下拉框的id
+            "opt0":["请选择省", "请选择市", "请选择区/县"]//省、市、区对应的下拉框第一个option的值
+        });
+
+        $("#form-admin-add").validate({
+            onkeyup:false,
+            focusCleanup:true,
+            success:"valid",
+            submitHandler:function(form){
+                $(form).ajaxSubmit({
+                    type: 'post',
+                    url: "/area/add" ,
+                    success: function(data){
+                        layer.msg(data,{icon:1,time:1000});
+                    },
+                    error: function(XmlHttpRequest, textStatus, errorThrown){
+                        layer.msg('error!',{icon:1,time:1000});
+                    }
+                });
+                var index = parent.layer.getFrameIndex(window.name);
+                parent.$('.btn-refresh').click();
+                parent.layer.close(index);
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

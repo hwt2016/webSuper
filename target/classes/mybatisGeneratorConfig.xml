@@ -67,6 +67,34 @@
         <table tableName="d_vehicle" domainObjectName="VehicleDO">
             <generatedKey column="id" sqlStatement="mysql" identity="true" />
         </table>
-         
+
+        <table tableName="d_area"     domainObjectName="AreaDO">
+            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        </table>
+
+        <table tableName="d_ascription"     domainObjectName="AscriptionDO">
+            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        </table>
+
+        <table tableName="d_period"     domainObjectName="PeriodDO">
+            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        </table>
+
+        <table tableName="d_accept"     domainObjectName="AcceptDO">
+            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        </table>
+
+        <table tableName="d_approval"     domainObjectName="ApprovalDO">
+            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        </table>
+
+        <table tableName="d_reply"     domainObjectName="ReplyDO">
+            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        </table>
+
+        <table tableName="d_monitor"     domainObjectName="MonitorDO">
+            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        </table>
+
     </context>
 </generatorConfiguration>

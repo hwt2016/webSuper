@@ -1,0 +1,563 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="Bookmark" href="/favicon.ico" >
+    <link rel="Shortcut Icon" href="/favicon.ico" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="/lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/h-ui.admin/css/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <title>用户信息录入</title>
+</head>
+<body>
+<article class="page-container">
+    <form class="form form-horizontal" id="form-admin-add" action="/user/addOfService" method="post">
+        <fieldset>
+            <legend>基本信息录入</legend>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>真实姓名：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="realname" name="realname">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="phone" name="phone">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>初始密码：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" autocomplete="off" value="666666" placeholder="" id="password" name="password">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>开户行：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="cardbank" name="cardbank">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>银行卡号：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="cardnumber" name="cardnumber">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>持卡人姓名：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="cardholder" name="cardholder">
+                </div>
+            </div>
+
+            <!--
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">出生日期：</label>
+                <div class="formControls col-xs-3 col-sm-3 skin-minimal">
+                    <input id=date_1 name="date_1" type="date"   class="input-text Wdate">
+                </div>
+            </div>
+            -->
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">出生日期：</label>
+                <div class="formControls col-xs-3 col-sm-3 skin-minimal">
+                    <input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd ' })" id="birthday" name="date_birthday" class="input-text Wdate">
+                </div>
+            </div>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>用户详细信息录入</legend>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">性别：</label>
+                <div class="formControls col-xs-3 col-sm-3 skin-minimal">
+                    <div class="radio-box">
+                        <input name="sex" type="radio" id="sex-1" value="M" checked>
+                        <label for="sex-1">男</label>
+                    </div>
+                    <div class="radio-box">
+                        <input type="radio" id="sex-2" name="sex" value="FM">
+                        <label for="sex-2">女</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">年龄：</label>
+                <div class="formControls col-xs-1 col-sm-1">
+                    <input type="number" class="input-text" value="" placeholder="" id="age" name="age">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">城市：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="city" name="cityofinof">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">收入：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="income" id="income"  title="请选择一个收入段" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">1500</option>
+                        <option value="2">1500-2500</option>
+                        <option value="3">2500-3500</option>
+                        <option value="4">3500-4500</option>
+                        <option value="5">4500以上</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">家庭月收入：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="incomeofhome" id="incomeofhome"  title="请选择一个收入段" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">3000</option>
+                        <option value="2">3000-6000</option>
+                        <option value="3">6000-10000</option>
+                        <option value="4">10000-14000</option>
+                        <option value="5">14000以上</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">婚姻：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="marriage" id="marriage"  title="婚姻状况" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">已婚</option>
+                        <option value="2">未婚</option>
+                        <option value="3">离异</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">健康：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="health" id="health"  title="健康状况" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">健康</option>
+                        <option value="2">病史</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">学历：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="education" id="education"  title="请选择学历阶段" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">高中以下</option>
+                        <option value="2">技师</option>
+                        <option value="3">专科</option>
+                        <option value="4">本科</option>
+                        <option value="5">研究生</option>
+                        <option value="6">博士</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">子女个数：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="countofchildren" id="countofchildren"  title="请选择子女个数" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">3个以上</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">工作单位性质：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="companyofnature" id="companyofnature"  title="请选择单位性质" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">机关单位</option>
+                        <option value="2">国有企业</option>
+                        <option value="3">外商独资</option>
+                        <option value="4">中外合资</option>
+                        <option value="5">上市公司</option>
+                        <option value="6">三资</option>
+                        <option value="7">社会团体</option>
+                        <option value="8">个体</option>
+                        <option value="9">其他</option>
+                    </select> <br />
+                </div>
+            </div>
+
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">开始工作时间：</label>
+                <div class="formControls col-xs-3 col-sm-3 skin-minimal">
+                    <input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd ' })" id="startofwork" name="date_startofwork" class="input-text Wdate">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">入职时间：</label>
+                <div class="formControls col-xs-3 col-sm-3 skin-minimal">
+                    <input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd'})" id="hiredate" name="date_hiredate" class="input-text Wdate">
+                </div>
+            </div>
+            <!--
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">开始工作时间：</label>
+                <div class="formControls col-xs-3 col-sm-3 skin-minimal">
+                    <input id=startofwork name="date_startofwork" type="date"   class="input-text Wdate">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">入职时间：</label>
+                <div class="formControls col-xs-3 col-sm-3 skin-minimal">
+                    <input id=hiredate name="date_hiredate" type="date"   class="input-text Wdate">
+                </div>
+            </div>
+            -->
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">工作年限：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="ageofwork" id="ageofwork"  title="工作年限" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">3年以下</option>
+                        <option value="2">3-10年</option>
+                        <option value="3">10年以上</option>
+                        <option value="4">其他</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">职位：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="position" id="position"  title="职位" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">基层员工</option>
+                        <option value="2">初级管理者</option>
+                        <option value="3">中级管理者</option>
+                        <option value="4">高级管理者</option>
+                        <option value="5">法人或股东</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">技术职称：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="professionalskill" name="professionalskill">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">银行账户：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="stateofbankofcount" id="stateofbankofcount"  title="请选择有无银行账户" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">有</option>
+                        <option value="2">无</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">社保信息：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="stateofshebao" id="stateofshebao"  title="请选择有无银行账户" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">有</option>
+                        <option value="2">无</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">信用卡额度：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number" style="width: 150px;" class="input-text" value="" placeholder="" id="creditcard" name="creditcard">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">担保额度：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number" style="width: 150px;" class="input-text" value="" placeholder="" id="guarantee" name="guarantee">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">法律诉讼：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="litigation" id="litigation"  title="法律诉讼" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">原告</option>
+                        <option value="2">被告</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">贷款记录：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="loan" id="loan"  title="法律诉讼" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">首贷</option>
+                        <option value="2">存量未到期</option>
+                        <option value="3">存量已到期</option>
+                        <option value="4">贷款机构</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">投资用途：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="investmentuse" id="investmentuse"  title="投资用途" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">不动产</option>
+                        <option value="2">风险投资</option>
+                        <option value="3">债务重整</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">网购记录：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="onlineshoppingrecord" name="onlineshoppingrecord">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">个人征信查询：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="personalcreditinquiry" id="personalcreditinquiry"  title="个人征信查询" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">0</option>
+                        <option value="2">1-5次</option>
+                        <option value="3">5次以上</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">预估额度：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number" style="width: 150px;" class="input-text" value="" placeholder="" id="estimatedloan" name="estimatedloan">
+                </div>
+            </div>
+
+
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>房产信息录入</legend>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">房产证编号：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="numofcertificate" name="numofcertificate">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">房产估值：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number" style="width: 150px;" class="input-text" value="" placeholder="" id="price" name="price">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">年限：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number"  class="input-text" value="" placeholder="" id="yearsofhouse" name="yearsofhouse">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">市价：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number"  class="input-text" value="" placeholder="" id="marketvalue" name="marketvalue">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">周边价格：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number"  class="input-text" value="" placeholder="" id="valueofarround" name="valueofarround">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">所在城市：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text" class="input-text" value="" placeholder="" id="cityofhouse" name="cityofhouse">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">房产性质：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="housetype" id="housetype"  title="房产性质" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">按揭房</option>
+                        <option value="2">全款房</option>
+                    </select> <br />
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">按月供：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number"  class="input-text" value="" placeholder="" id="payment" name="payment">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">详细地址：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text"  class="input-text" value="" placeholder="" id="address" name="address">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">面积：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="number"  class="input-text" value="" placeholder="" id="area" name="area">
+                </div>
+            </div>
+
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>车辆信息录入</legend>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">车型：</label>
+                <div class="formControls col-xs-3 col-sm-3">
+                    <input type="text"  class="input-text" value="" placeholder="" id="typeofcar" name="typeofcar">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">汽车性质：</label>
+                <div class="formControls col-xs-2 col-sm-2">
+                    <select name="natureofvehicle" id="natureofvehicle"  title="汽车性质" class="select">
+                        <option value="">-请选择-</option>
+                        <option value="1">自有无贷</option>
+                        <option value="2">自有有贷</option>
+                        <option value="3">其他</option>
+                    </select> <br />
+                </div>
+            </div>
+
+        </fieldset>
+        <br>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+
+    </form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+
+        $("#form-admin-add").validate({
+            rules:{
+                realname:{
+                    required:true,
+                    minlength:1,
+                    maxlength:16
+                },
+                phone:{
+                    required:true,
+                    isPhone:true,
+                },
+                cardnumber:{
+                    isCardNumber:true,
+                },
+            },
+            onkeyup:false,
+            focusCleanup:true,
+            success:"valid",
+            submitHandler:function(form){
+                $(form).ajaxSubmit({
+                    type: 'post',
+                    url: "/user/addOfService" ,
+                    success: function(data){
+                        if(data=="false")
+                            layer.msg("手机号已注册",{icon:2,time:1000});
+                        else
+                            layer.msg(data,{icon:1,time:1000})
+                    },
+                    error: function(XmlHttpRequest, textStatus, errorThrown){
+                        layer.msg('error!',{icon:1,time:1000});
+                    }
+                });
+                var index = parent.layer.getFrameIndex(window.name);
+                parent.$('.btn-refresh').click();
+                parent.layer.close(index);
+            }
+        });
+
+    });
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

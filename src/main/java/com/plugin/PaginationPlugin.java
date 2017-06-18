@@ -86,8 +86,8 @@ public class PaginationPlugin extends PluginAdapter {
         ShellRunner.main(arg);
     }
 
-//    public static void main(String[] args) {
-//        generate();
-//    }
+    public static void main(String[] args) {
+        generate();
+    }
 
 }
