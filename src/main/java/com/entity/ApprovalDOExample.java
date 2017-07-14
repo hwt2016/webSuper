@@ -338,6 +338,66 @@ public class ApprovalDOExample {
             return (Criteria) this;
         }
 
+        public Criteria andLoanidIsNull() {
+            addCriterion("loanid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidIsNotNull() {
+            addCriterion("loanid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidEqualTo(Integer value) {
+            addCriterion("loanid =", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidNotEqualTo(Integer value) {
+            addCriterion("loanid <>", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidGreaterThan(Integer value) {
+            addCriterion("loanid >", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("loanid >=", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidLessThan(Integer value) {
+            addCriterion("loanid <", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidLessThanOrEqualTo(Integer value) {
+            addCriterion("loanid <=", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidIn(List<Integer> values) {
+            addCriterion("loanid in", values, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidNotIn(List<Integer> values) {
+            addCriterion("loanid not in", values, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidBetween(Integer value1, Integer value2) {
+            addCriterion("loanid between", value1, value2, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidNotBetween(Integer value1, Integer value2) {
+            addCriterion("loanid not between", value1, value2, "loanid");
+            return (Criteria) this;
+        }
+
         public Criteria andRongtargetIsNull() {
             addCriterion("rongtarget is null");
             return (Criteria) this;

@@ -48,7 +48,9 @@ public class DateConvert {
      */
     public static String dateToStr(Date dateDate) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        String dateString = formatter.format(dateDate);
+        String dateString = null;
+        if(dateDate!=null)
+            dateString = formatter.format(dateDate);
         return dateString;
     }
 

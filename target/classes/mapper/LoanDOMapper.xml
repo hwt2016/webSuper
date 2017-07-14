@@ -19,7 +19,7 @@
     <result column="shareRatio" jdbcType="REAL" property="shareratio" />
     <result column="ageOfWork" jdbcType="INTEGER" property="ageofwork" />
     <result column="annualIncome" jdbcType="REAL" property="annualincome" />
-    <result column="hiredate" jdbcType="INTEGER" property="hiredate" />
+    <result column="hiredate" jdbcType="DATE" property="hiredate" />
     <result column="kinName" jdbcType="VARCHAR" property="kinname" />
     <result column="kinPhone" jdbcType="VARCHAR" property="kinphone" />
     <result column="loanAmount" jdbcType="REAL" property="loanamount" />
@@ -180,7 +180,7 @@
       #{countofchildren,jdbcType=INTEGER}, #{education,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
       #{company,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{companyaddress,jdbcType=VARCHAR}, 
       #{shareratio,jdbcType=REAL}, #{ageofwork,jdbcType=INTEGER}, #{annualincome,jdbcType=REAL}, 
-      #{hiredate,jdbcType=INTEGER}, #{kinname,jdbcType=VARCHAR}, #{kinphone,jdbcType=VARCHAR}, 
+      #{hiredate,jdbcType=DATE}, #{kinname,jdbcType=VARCHAR}, #{kinphone,jdbcType=VARCHAR}, 
       #{loanamount,jdbcType=REAL}, #{loanterm,jdbcType=DATE}, #{expectedloanform,jdbcType=VARCHAR}, 
       #{estimatedloan,jdbcType=INTEGER}, #{cardholder,jdbcType=VARCHAR}, #{cardnumber,jdbcType=VARCHAR}, 
       #{cardphone,jdbcType=VARCHAR}, #{cardbank,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, 
@@ -313,7 +313,7 @@
         #{annualincome,jdbcType=REAL},
       </if>
       <if test="hiredate != null">
-        #{hiredate,jdbcType=INTEGER},
+        #{hiredate,jdbcType=DATE},
       </if>
       <if test="kinname != null">
         #{kinname,jdbcType=VARCHAR},
@@ -413,7 +413,7 @@
         annualIncome = #{record.annualincome,jdbcType=REAL},
       </if>
       <if test="record.hiredate != null">
-        hiredate = #{record.hiredate,jdbcType=INTEGER},
+        hiredate = #{record.hiredate,jdbcType=DATE},
       </if>
       <if test="record.kinname != null">
         kinName = #{record.kinname,jdbcType=VARCHAR},
@@ -478,7 +478,7 @@
       shareRatio = #{record.shareratio,jdbcType=REAL},
       ageOfWork = #{record.ageofwork,jdbcType=INTEGER},
       annualIncome = #{record.annualincome,jdbcType=REAL},
-      hiredate = #{record.hiredate,jdbcType=INTEGER},
+      hiredate = #{record.hiredate,jdbcType=DATE},
       kinName = #{record.kinname,jdbcType=VARCHAR},
       kinPhone = #{record.kinphone,jdbcType=VARCHAR},
       loanAmount = #{record.loanamount,jdbcType=REAL},
@@ -540,7 +540,7 @@
         annualIncome = #{annualincome,jdbcType=REAL},
       </if>
       <if test="hiredate != null">
-        hiredate = #{hiredate,jdbcType=INTEGER},
+        hiredate = #{hiredate,jdbcType=DATE},
       </if>
       <if test="kinname != null">
         kinName = #{kinname,jdbcType=VARCHAR},
@@ -602,7 +602,7 @@
       shareRatio = #{shareratio,jdbcType=REAL},
       ageOfWork = #{ageofwork,jdbcType=INTEGER},
       annualIncome = #{annualincome,jdbcType=REAL},
-      hiredate = #{hiredate,jdbcType=INTEGER},
+      hiredate = #{hiredate,jdbcType=DATE},
       kinName = #{kinname,jdbcType=VARCHAR},
       kinPhone = #{kinphone,jdbcType=VARCHAR},
       loanAmount = #{loanamount,jdbcType=REAL},

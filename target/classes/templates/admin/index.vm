@@ -89,10 +89,10 @@
             <dt><i class="Hui-iconfont">&#xe62d;</i>审贷处理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="/ascription/mainAsc" data-title="受理列表" href="javascript:void(0)">受理列表</a></li>
-                    <li><a data-href="/ascription/mainAsc" data-title="审批列表" href="javascript:void(0)">审批列表</a></li>
-                    <li><a data-href="/ascription/mainAsc" data-title="批复列表" href="javascript:void(0)">批复列表</a></li>
-                    <li><a data-href="/ascription/mainAsc" data-title="贷后监控列表" href="javascript:void(0)">贷后监控列表</a></li>
+                    <li><a data-href="/accept/acceptList" data-title="受理列表" href="javascript:void(0)">受理列表</a></li>
+                    <li><a data-href="/approval/approvalList" data-title="审批列表" href="javascript:void(0)">审批列表</a></li>
+                    <li><a data-href="/reply/replyList" data-title="批复列表" href="javascript:void(0)">批复列表</a></li>
+                    <li><a data-href="/monitor/monitorList" data-title="贷后监控列表" href="javascript:void(0)">贷后监控列表</a></li>
                 </ul>
             </dd>
         </dl>

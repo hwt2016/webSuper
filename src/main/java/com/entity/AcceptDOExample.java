@@ -311,6 +311,66 @@ public class AcceptDOExample {
             return (Criteria) this;
         }
 
+        public Criteria andLoanidIsNull() {
+            addCriterion("loanid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidIsNotNull() {
+            addCriterion("loanid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidEqualTo(Integer value) {
+            addCriterion("loanid =", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidNotEqualTo(Integer value) {
+            addCriterion("loanid <>", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidGreaterThan(Integer value) {
+            addCriterion("loanid >", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("loanid >=", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidLessThan(Integer value) {
+            addCriterion("loanid <", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidLessThanOrEqualTo(Integer value) {
+            addCriterion("loanid <=", value, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidIn(List<Integer> values) {
+            addCriterion("loanid in", values, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidNotIn(List<Integer> values) {
+            addCriterion("loanid not in", values, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidBetween(Integer value1, Integer value2) {
+            addCriterion("loanid between", value1, value2, "loanid");
+            return (Criteria) this;
+        }
+
+        public Criteria andLoanidNotBetween(Integer value1, Integer value2) {
+            addCriterion("loanid not between", value1, value2, "loanid");
+            return (Criteria) this;
+        }
+
         public Criteria andDealmanageridIsNull() {
             addCriterion("dealmanagerid is null");
             return (Criteria) this;
@@ -368,6 +428,76 @@ public class AcceptDOExample {
 
         public Criteria andDealmanageridNotBetween(Integer value1, Integer value2) {
             addCriterion("dealmanagerid not between", value1, value2, "dealmanagerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameIsNull() {
+            addCriterion("dealmanagername is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameIsNotNull() {
+            addCriterion("dealmanagername is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameEqualTo(String value) {
+            addCriterion("dealmanagername =", value, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameNotEqualTo(String value) {
+            addCriterion("dealmanagername <>", value, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameGreaterThan(String value) {
+            addCriterion("dealmanagername >", value, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameGreaterThanOrEqualTo(String value) {
+            addCriterion("dealmanagername >=", value, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameLessThan(String value) {
+            addCriterion("dealmanagername <", value, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameLessThanOrEqualTo(String value) {
+            addCriterion("dealmanagername <=", value, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameLike(String value) {
+            addCriterion("dealmanagername like", value, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameNotLike(String value) {
+            addCriterion("dealmanagername not like", value, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameIn(List<String> values) {
+            addCriterion("dealmanagername in", values, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameNotIn(List<String> values) {
+            addCriterion("dealmanagername not in", values, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameBetween(String value1, String value2) {
+            addCriterion("dealmanagername between", value1, value2, "dealmanagername");
+            return (Criteria) this;
+        }
+
+        public Criteria andDealmanagernameNotBetween(String value1, String value2) {
+            addCriterion("dealmanagername not between", value1, value2, "dealmanagername");
             return (Criteria) this;
         }
 

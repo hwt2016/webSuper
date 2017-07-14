@@ -1138,53 +1138,53 @@ public class LoanDOExample {
             return (Criteria) this;
         }
 
-        public Criteria andHiredateEqualTo(Integer value) {
-            addCriterion("hiredate =", value, "hiredate");
+        public Criteria andHiredateEqualTo(Date value) {
+            addCriterionForJDBCDate("hiredate =", value, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateNotEqualTo(Integer value) {
-            addCriterion("hiredate <>", value, "hiredate");
+        public Criteria andHiredateNotEqualTo(Date value) {
+            addCriterionForJDBCDate("hiredate <>", value, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateGreaterThan(Integer value) {
-            addCriterion("hiredate >", value, "hiredate");
+        public Criteria andHiredateGreaterThan(Date value) {
+            addCriterionForJDBCDate("hiredate >", value, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateGreaterThanOrEqualTo(Integer value) {
-            addCriterion("hiredate >=", value, "hiredate");
+        public Criteria andHiredateGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("hiredate >=", value, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateLessThan(Integer value) {
-            addCriterion("hiredate <", value, "hiredate");
+        public Criteria andHiredateLessThan(Date value) {
+            addCriterionForJDBCDate("hiredate <", value, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateLessThanOrEqualTo(Integer value) {
-            addCriterion("hiredate <=", value, "hiredate");
+        public Criteria andHiredateLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("hiredate <=", value, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateIn(List<Integer> values) {
-            addCriterion("hiredate in", values, "hiredate");
+        public Criteria andHiredateIn(List<Date> values) {
+            addCriterionForJDBCDate("hiredate in", values, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateNotIn(List<Integer> values) {
-            addCriterion("hiredate not in", values, "hiredate");
+        public Criteria andHiredateNotIn(List<Date> values) {
+            addCriterionForJDBCDate("hiredate not in", values, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateBetween(Integer value1, Integer value2) {
-            addCriterion("hiredate between", value1, value2, "hiredate");
+        public Criteria andHiredateBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("hiredate between", value1, value2, "hiredate");
             return (Criteria) this;
         }
 
-        public Criteria andHiredateNotBetween(Integer value1, Integer value2) {
-            addCriterion("hiredate not between", value1, value2, "hiredate");
+        public Criteria andHiredateNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("hiredate not between", value1, value2, "hiredate");
             return (Criteria) this;
         }
 
