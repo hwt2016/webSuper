@@ -7,6 +7,7 @@ import com.mapper.AreaDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,6 +24,8 @@ public class AreaService {
 
     //向Area中插入一条记录
     public boolean insert(AreaDO areaDO){
+        areaDO.setCreatetime(new Date(System.currentTimeMillis()));
+        areaDO.setUpdatetime(new Date(System.currentTimeMillis()));
         areaDOMapper.insert(areaDO);
         return true;
     }

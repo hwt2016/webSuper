@@ -6,6 +6,7 @@ import com.mapper.ApprovalDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,6 +22,8 @@ public class ApprovalService {
     //======插入操作=================================================================================================
     //插入一个审批对象
     public boolean insert(ApprovalDO approvalDO){
+        approvalDO.setCreatetime(new Date(System.currentTimeMillis()));
+        approvalDO.setUpdatetime(new Date(System.currentTimeMillis()));
         approvalDOMapper.insert(approvalDO);
         return true;
     }
@@ -46,6 +49,7 @@ public class ApprovalService {
 
     //更新批复信息（只更新参数中不为null的部分）
     public boolean update(ApprovalDO approvalDO) {
+        approvalDO.setUpdatetime(new Date(System.currentTimeMillis()));
         approvalDOMapper.updateByPrimaryKeySelective(approvalDO);
         return true;
     }

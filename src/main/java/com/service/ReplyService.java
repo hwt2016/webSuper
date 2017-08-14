@@ -6,6 +6,7 @@ import com.mapper.ReplyDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,6 +23,8 @@ public class ReplyService {
 
     //插入一条新的批复记录
     public boolean insert(ReplyDO replyDO){
+        replyDO.setCreatetime(new Date(System.currentTimeMillis()));
+        replyDO.setUpdatetime(new Date(System.currentTimeMillis()));
         replyDOMapper.insert(replyDO);
         return true;
     }
@@ -45,6 +48,7 @@ public class ReplyService {
     }
 
     public boolean update(ReplyDO replyDO) {
+        replyDO.setUpdatetime(new Date(System.currentTimeMillis()));
         replyDOMapper.updateByPrimaryKeySelective(replyDO);
         return true;
     }

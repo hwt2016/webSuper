@@ -6,6 +6,7 @@ import com.mapper.AcceptDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,6 +45,7 @@ public class AcceptService {
 
     //更新受理信息
     public boolean update(AcceptDO acceptDO){
+        acceptDO.setUpdatetime(new Date(System.currentTimeMillis()));
         acceptDOMapper.updateByPrimaryKeySelective(acceptDO);
         return true;
     }

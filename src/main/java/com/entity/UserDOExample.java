@@ -1378,6 +1378,76 @@ public class UserDOExample {
             return (Criteria) this;
         }
 
+        public Criteria andInvitelinkIsNull() {
+            addCriterion("inviteLink is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkIsNotNull() {
+            addCriterion("inviteLink is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkEqualTo(String value) {
+            addCriterion("inviteLink =", value, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkNotEqualTo(String value) {
+            addCriterion("inviteLink <>", value, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkGreaterThan(String value) {
+            addCriterion("inviteLink >", value, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkGreaterThanOrEqualTo(String value) {
+            addCriterion("inviteLink >=", value, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkLessThan(String value) {
+            addCriterion("inviteLink <", value, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkLessThanOrEqualTo(String value) {
+            addCriterion("inviteLink <=", value, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkLike(String value) {
+            addCriterion("inviteLink like", value, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkNotLike(String value) {
+            addCriterion("inviteLink not like", value, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkIn(List<String> values) {
+            addCriterion("inviteLink in", values, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkNotIn(List<String> values) {
+            addCriterion("inviteLink not in", values, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkBetween(String value1, String value2) {
+            addCriterion("inviteLink between", value1, value2, "invitelink");
+            return (Criteria) this;
+        }
+
+        public Criteria andInvitelinkNotBetween(String value1, String value2) {
+            addCriterion("inviteLink not between", value1, value2, "invitelink");
+            return (Criteria) this;
+        }
+
         public Criteria andStatusIsNull() {
             addCriterion("status is null");
             return (Criteria) this;

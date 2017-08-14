@@ -7,6 +7,7 @@ import com.mapper.UserDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,6 +22,8 @@ public class UserService {
     //======     insert  插入操作=================================================================================================
     //插入一个用户
     public boolean insert(UserDO userDO){
+        userDO.setCreatetime(new Date(System.currentTimeMillis()));
+        userDO.setUpdatetime(new Date(System.currentTimeMillis()));
         userDOMapper.insert(userDO);
         return true;
     }
@@ -111,6 +114,7 @@ public class UserService {
 
     //根据主键更新用户基本信息
     public boolean update(UserDO userDO){
+        userDO.setUpdatetime(new Date(System.currentTimeMillis()));
         userDOMapper.updateByPrimaryKeySelective(userDO);//更新userDO中属性不为null的字段
         return true;
     }

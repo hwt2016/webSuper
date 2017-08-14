@@ -6,6 +6,7 @@ import com.mapper.UserInfoDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,6 +20,8 @@ public class UserInfoService {
     //************** insert  插入*************************************************
     //插入一条用户信息
     public boolean insert(UserInfoDO userInfoDO){
+        userInfoDO.setCreatetime(new Date(System.currentTimeMillis()));
+        userInfoDO.setUpdatetime(new Date(System.currentTimeMillis()));
         userInfoDOMapper.insert(userInfoDO);
         return true;
     }
@@ -42,8 +45,20 @@ public class UserInfoService {
         return userInfoDO;
     }
 
+    //根据userInfo（id)更新详细信息表
     public boolean update(UserInfoDO userInfoDO){
+        userInfoDO.setUpdatetime(new Date(System.currentTimeMillis()));
         userInfoDOMapper.updateByPrimaryKeySelective(userInfoDO);
+        return true;
+    }
+
+    //根据userid更新详细信息
+    public boolean updateByUserId(UserInfoDO userInfoDO){
+        userInfoDO.setUpdatetime(new Date(System.currentTimeMillis()));
+        UserInfoDOExample userInfoDOExample = new UserInfoDOExample();
+        UserInfoDOExample.Criteria criteria = userInfoDOExample.createCriteria();
+        criteria.andUseridEqualTo(userInfoDO.getUserid());
+        userInfoDOMapper.updateByExampleSelective(userInfoDO,userInfoDOExample);
         return true;
     }
 }

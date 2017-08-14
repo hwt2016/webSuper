@@ -6,6 +6,7 @@ import com.mapper.HouseDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,6 +20,8 @@ public class HouseService {
     //************** insert  插入*************************************************
     //新增用户房产信息
     public boolean insert(HouseDO houseDO){
+        houseDO.setCreatetime(new Date(System.currentTimeMillis()));
+        houseDO.setUpdatetime(new Date(System.currentTimeMillis()));
         houseDOMapper.insert(houseDO);
         return true;
     }
@@ -31,6 +34,7 @@ public class HouseService {
         HouseDOExample houseDOExample = new HouseDOExample();
         HouseDOExample.Criteria criteria = houseDOExample.createCriteria();
         criteria.andUseridEqualTo(userid);
+        criteria.andStatusEqualTo("正常");
         List<HouseDO> houseDOS = houseDOMapper.selectByExample(houseDOExample);
         return houseDOS;
     }
@@ -45,6 +49,7 @@ public class HouseService {
 
     //根据houseid更新房产信息
     public boolean update(HouseDO houseDO){
+        houseDO.setUpdatetime(new Date(System.currentTimeMillis()));
         houseDOMapper.updateByPrimaryKeySelective(houseDO);
         return true;
     }

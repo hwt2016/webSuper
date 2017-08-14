@@ -6,6 +6,7 @@ import com.mapper.VehicleDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -40,6 +41,8 @@ public class VehicleService {
 
     //插入一条车辆信息
     public boolean insert(VehicleDO vehicleDO){
+        vehicleDO.setCreatetime(new Date(System.currentTimeMillis()));
+        vehicleDO.setUpdatetime(new Date(System.currentTimeMillis()));
         vehicleDOMapper.insert(vehicleDO);
         return true;
     }
@@ -48,6 +51,7 @@ public class VehicleService {
 
     //根据车辆id更新车辆信息
     public boolean update(VehicleDO vehicleDO){
+        vehicleDO.setUpdatetime(new Date(System.currentTimeMillis()));
         vehicleDOMapper.updateByPrimaryKeySelective(vehicleDO);
         return true;
     }

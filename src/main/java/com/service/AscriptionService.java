@@ -6,6 +6,7 @@ import com.mapper.AscriptionDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,6 +21,8 @@ public class AscriptionService {
     //************** insert  插入*************************************************
     //新增上下级归属
     public boolean insert(AscriptionDO ascriptionDO){
+        ascriptionDO.setCreatetime(new Date(System.currentTimeMillis()));
+        ascriptionDO.setUpdatetime(new Date(System.currentTimeMillis()));
         ascriptionDOMapper.insert(ascriptionDO);
         return true;
     }
@@ -58,6 +61,7 @@ public class AscriptionService {
 
     //更新归属关系对象
     public boolean update(AscriptionDO ascriptionDO){
+        ascriptionDO.setUpdatetime(new Date(System.currentTimeMillis()));
         ascriptionDOMapper.updateByPrimaryKeySelective(ascriptionDO);
         return true;
     }

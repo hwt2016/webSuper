@@ -19,7 +19,7 @@ import java.util.Map;
  * Created by sa on 2017-05-25.
  */
 @Controller
-@RequestMapping(value = "/xqjr")
+@RequestMapping(value = "/test")
 public class testController {
     @Autowired
     private UserService userService;

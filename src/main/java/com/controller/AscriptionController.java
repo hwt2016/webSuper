@@ -56,6 +56,8 @@ public class AscriptionController {
         //若果有上级则提取用户（M)的上级用户信息（N)
         if(ascriptionDO!=null)
            upGradeUser = userService.selectUserById(ascriptionDO.getUpuserid());
+
+        //TODO 这里可以在以后进行多表查询优化
         //提取带调动的用户（M)所有下级用户信息列表（Z)
         List<AscriptionDO> ascriptionDOS = ascriptionService.selectByupGradeUserId(ownUser.getId());
         //待存储下级用户信息列表

@@ -6,6 +6,7 @@ import com.mapper.MonitorDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -38,12 +39,15 @@ public class MonitorService {
 
     //插入一条贷后监控记录
     public boolean insert(MonitorDO monitorDO){
+        monitorDO.setUpdatetime(new Date(System.currentTimeMillis()));
+        monitorDO.setCreatetime(new Date(System.currentTimeMillis()));
         monitorDOMapper.insert(monitorDO);
         return true;
     }
 
     //更新参数中变量不为null的数据
     public boolean update(MonitorDO monitorDO) {
+        monitorDO.setUpdatetime(new Date(System.currentTimeMillis()));
         monitorDOMapper.updateByPrimaryKeySelective(monitorDO);
         return true;
     }
