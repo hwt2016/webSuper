@@ -1398,53 +1398,53 @@ public class LoanDOExample {
             return (Criteria) this;
         }
 
-        public Criteria andLoantermEqualTo(Date value) {
-            addCriterionForJDBCDate("loanTerm =", value, "loanterm");
+        public Criteria andLoantermEqualTo(Integer value) {
+            addCriterion("loanTerm =", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermNotEqualTo(Date value) {
-            addCriterionForJDBCDate("loanTerm <>", value, "loanterm");
+        public Criteria andLoantermNotEqualTo(Integer value) {
+            addCriterion("loanTerm <>", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermGreaterThan(Date value) {
-            addCriterionForJDBCDate("loanTerm >", value, "loanterm");
+        public Criteria andLoantermGreaterThan(Integer value) {
+            addCriterion("loanTerm >", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("loanTerm >=", value, "loanterm");
+        public Criteria andLoantermGreaterThanOrEqualTo(Integer value) {
+            addCriterion("loanTerm >=", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermLessThan(Date value) {
-            addCriterionForJDBCDate("loanTerm <", value, "loanterm");
+        public Criteria andLoantermLessThan(Integer value) {
+            addCriterion("loanTerm <", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("loanTerm <=", value, "loanterm");
+        public Criteria andLoantermLessThanOrEqualTo(Integer value) {
+            addCriterion("loanTerm <=", value, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermIn(List<Date> values) {
-            addCriterionForJDBCDate("loanTerm in", values, "loanterm");
+        public Criteria andLoantermIn(List<Integer> values) {
+            addCriterion("loanTerm in", values, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermNotIn(List<Date> values) {
-            addCriterionForJDBCDate("loanTerm not in", values, "loanterm");
+        public Criteria andLoantermNotIn(List<Integer> values) {
+            addCriterion("loanTerm not in", values, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("loanTerm between", value1, value2, "loanterm");
+        public Criteria andLoantermBetween(Integer value1, Integer value2) {
+            addCriterion("loanTerm between", value1, value2, "loanterm");
             return (Criteria) this;
         }
 
-        public Criteria andLoantermNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("loanTerm not between", value1, value2, "loanterm");
+        public Criteria andLoantermNotBetween(Integer value1, Integer value2) {
+            addCriterion("loanTerm not between", value1, value2, "loanterm");
             return (Criteria) this;
         }
 
@@ -1855,6 +1855,146 @@ public class LoanDOExample {
 
         public Criteria andCardbankNotBetween(String value1, String value2) {
             addCriterion("cardBank not between", value1, value2, "cardbank");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicIsNull() {
+            addCriterion("idCardFrontPic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicIsNotNull() {
+            addCriterion("idCardFrontPic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicEqualTo(String value) {
+            addCriterion("idCardFrontPic =", value, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicNotEqualTo(String value) {
+            addCriterion("idCardFrontPic <>", value, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicGreaterThan(String value) {
+            addCriterion("idCardFrontPic >", value, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicGreaterThanOrEqualTo(String value) {
+            addCriterion("idCardFrontPic >=", value, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicLessThan(String value) {
+            addCriterion("idCardFrontPic <", value, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicLessThanOrEqualTo(String value) {
+            addCriterion("idCardFrontPic <=", value, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicLike(String value) {
+            addCriterion("idCardFrontPic like", value, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicNotLike(String value) {
+            addCriterion("idCardFrontPic not like", value, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicIn(List<String> values) {
+            addCriterion("idCardFrontPic in", values, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicNotIn(List<String> values) {
+            addCriterion("idCardFrontPic not in", values, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicBetween(String value1, String value2) {
+            addCriterion("idCardFrontPic between", value1, value2, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardfrontpicNotBetween(String value1, String value2) {
+            addCriterion("idCardFrontPic not between", value1, value2, "idcardfrontpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicIsNull() {
+            addCriterion("idCardBackPic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicIsNotNull() {
+            addCriterion("idCardBackPic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicEqualTo(String value) {
+            addCriterion("idCardBackPic =", value, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicNotEqualTo(String value) {
+            addCriterion("idCardBackPic <>", value, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicGreaterThan(String value) {
+            addCriterion("idCardBackPic >", value, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicGreaterThanOrEqualTo(String value) {
+            addCriterion("idCardBackPic >=", value, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicLessThan(String value) {
+            addCriterion("idCardBackPic <", value, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicLessThanOrEqualTo(String value) {
+            addCriterion("idCardBackPic <=", value, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicLike(String value) {
+            addCriterion("idCardBackPic like", value, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicNotLike(String value) {
+            addCriterion("idCardBackPic not like", value, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicIn(List<String> values) {
+            addCriterion("idCardBackPic in", values, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicNotIn(List<String> values) {
+            addCriterion("idCardBackPic not in", values, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicBetween(String value1, String value2) {
+            addCriterion("idCardBackPic between", value1, value2, "idcardbackpic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdcardbackpicNotBetween(String value1, String value2) {
+            addCriterion("idCardBackPic not between", value1, value2, "idcardbackpic");
             return (Criteria) this;
         }
 

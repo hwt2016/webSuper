@@ -30,6 +30,7 @@ H:\xqjr\webSuper\src\main\java\com\em\GradeEnum.java
 H:\xqjr\webSuper\src\main\java\com\controller\UserController.java
 H:\xqjr\webSuper\src\main\java\com\controller\AcceptController.java
 H:\xqjr\webSuper\src\main\java\com\entity\UserInfoDO.java
+H:\xqjr\webSuper\src\main\java\com\appController\AppLoanController.java
 H:\xqjr\webSuper\src\main\java\com\convert\GradeConvert.java
 H:\xqjr\webSuper\src\main\java\com\entityConvert\MonitorDOConvertMethod.java
 H:\xqjr\webSuper\src\main\java\com\service\PeriodService.java
@@ -58,6 +59,7 @@ H:\xqjr\webSuper\src\main\java\com\entity\AdminDOExample.java
 H:\xqjr\webSuper\src\main\java\com\controller\AreaController.java
 H:\xqjr\webSuper\src\main\java\com\controller\testController.java
 H:\xqjr\webSuper\src\main\java\com\entity\HouseDO.java
+H:\xqjr\webSuper\src\main\java\com\controller\OssController.java
 H:\xqjr\webSuper\src\main\java\com\entity\PeriodDOExample.java
 H:\xqjr\webSuper\src\main\java\com\appController\AppHouseController.java
 H:\xqjr\webSuper\src\main\java\com\entity\HouseDOExample.java
@@ -66,6 +68,7 @@ H:\xqjr\webSuper\src\main\java\com\mapper\HouseDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\service\UserInfoService.java
 H:\xqjr\webSuper\src\main\java\com\controller\ReplyController.java
 H:\xqjr\webSuper\src\main\java\com\mapper\MonitorDOMapper.java
+H:\xqjr\webSuper\src\main\java\com\oss\StsService.java
 H:\xqjr\webSuper\src\main\java\com\entity\VehicleDO.java
 H:\xqjr\webSuper\src\main\java\com\mapper\ReplyDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\entityConvert\ApprovalDOConvertMethod.java

@@ -2,9 +2,11 @@ package com.appController;
 
 import com.entity.HouseDO;
 import com.service.HouseService;
+import com.service.UserService;
 import com.util.JsonConvert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,6 +24,8 @@ public class AppHouseController {
 
     @Autowired
     private HouseService houseService;
+    @Autowired
+    private UserService userService;
 
     /**
      *根据用户id获取他的所有房产信息
@@ -38,7 +42,7 @@ public class AppHouseController {
     /**
      *更新或添加房产信息
      * @param jsonHouse (房产信息列表）
-     * @return（1：待更新的房产列表为空 2：更新或添加成功)
+     * @return（0：待更新的房产列表为空 1：更新或添加成功 2：添加异常)
      */
     @ResponseBody
     @RequestMapping(value = "/appHouseUpadteALL",method = RequestMethod.POST)
@@ -59,6 +63,26 @@ public class AppHouseController {
             return "2";
         }
         return "1";
+    }
+
+    /**
+     * 添加一套房产信息
+     * @param houseDO
+     * @return （0：待更新的房产列表为空 1：更新或添加成功 2：添加异常)
+     */
+    @RequestMapping(value = "/appHouseAdd",method = RequestMethod.POST)
+    @ResponseBody
+    public String appHouseAdd(@RequestBody HouseDO houseDO){
+        System.out.println("添加一个新的房产");
+        if(houseDO.getUserid()==null||houseDO.getUserid().equals("")||houseDO.getNumofcertificate()==null||houseDO.getNumofcertificate().equals(""))
+            return "0";
+        int userid=houseDO.getUserid();
+        if(userService.IfExistsByUserId(userid)){
+            houseService.insert(houseDO);
+            return "1";
+        }else{
+            return "2";
+        }
     }
 
 //    @RequestMapping(value = "/test",method = RequestMethod.GET)

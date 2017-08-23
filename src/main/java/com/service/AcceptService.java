@@ -49,4 +49,17 @@ public class AcceptService {
         acceptDOMapper.updateByPrimaryKeySelective(acceptDO);
         return true;
     }
+
+    /**
+     * 插入一条新的受理信息
+     * @param acceptDO
+     * @return  返回新增的受理id
+     */
+    public int insert(AcceptDO acceptDO){
+        acceptDO.setCreatetime(new Date(System.currentTimeMillis()));
+        acceptDO.setUpdatetime(new Date(System.currentTimeMillis()));
+        if(acceptDOMapper.insert(acceptDO)==1)
+            return acceptDO.getId();
+        return 0;
+    }
 }

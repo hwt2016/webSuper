@@ -5,6 +5,8 @@ import com.mapper.LoanDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * Created by sa on 2017-06-18.
  * 贷款接口表
@@ -22,4 +24,19 @@ public class LoanService {
         return loanDO;
     }
 
+
+
+    //************** insert  新增*************************************************
+    /**
+     * 插入一条贷款信息
+     * @param loanDO
+     * @return
+     */
+    public int insertLoanDO(LoanDO loanDO){
+        loanDO.setCreatetime(new Date(System.currentTimeMillis()));
+        loanDO.setUpdatetime(new Date(System.currentTimeMillis()));
+        if(loanDOMapper.insert(loanDO)==1)
+            return loanDO.getId();
+        return 0;
+    }
 }

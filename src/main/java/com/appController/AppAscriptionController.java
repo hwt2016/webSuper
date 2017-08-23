@@ -25,6 +25,11 @@ public class AppAscriptionController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 根据userid获取用户的下级
+     * @param userid
+     * @return
+     */
     @ResponseBody
     @RequestMapping(value = "/getDownGradeByUserId")
     public List<UserDO> getDownGradeByUserId(int userid){
@@ -33,7 +38,8 @@ public class AppAscriptionController {
         //TODO 这里可以在以后进行多表查询优化
         //提取用户（M)所有下级用户信息列表（Z)
         List<AscriptionDO> ascriptionDOS = ascriptionService.selectByupGradeUserId(userDO.getId());
-        System.out.println("大小="+ascriptionDOS.size());
+        if(ascriptionDOS==null)
+            return null;
         //待存储下级用户信息列表
         List<UserDO> downGradeUserDOS =  new ArrayList<UserDO>();
         //如果为空则跳过
@@ -41,10 +47,11 @@ public class AppAscriptionController {
             for(AscriptionDO asc :ascriptionDOS){
                 //根据下级downuserid提取用户信息
                 UserDO user = userService.selectUserById(asc.getDownuserid());
-                //加入到夏季用户信息列表中
+                //加入到下级用户信息列表中
                 downGradeUserDOS.add(user);
-                return downGradeUserDOS;
+
             }
+            return downGradeUserDOS;
         }
         return null;
     }
