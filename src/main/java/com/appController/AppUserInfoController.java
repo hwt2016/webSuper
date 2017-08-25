@@ -41,6 +41,7 @@ public class AppUserInfoController {
     @ResponseBody
     @RequestMapping(value = "/appUserInfoUpdateByUserId",method = RequestMethod.POST)
     private String appUserInfoUpdateByUserId(String jsonUserInfo){
+        System.out.println("jsonUserInfo"+jsonUserInfo);
         //如果接收的字符串为空，则返回0
         if(jsonUserInfo==null||jsonUserInfo.equals(""))
             return "0";
