@@ -441,6 +441,66 @@ public class LoanTrackingDOExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpuseridIsNull() {
+            addCriterion("upuserid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridIsNotNull() {
+            addCriterion("upuserid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridEqualTo(Integer value) {
+            addCriterion("upuserid =", value, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridNotEqualTo(Integer value) {
+            addCriterion("upuserid <>", value, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridGreaterThan(Integer value) {
+            addCriterion("upuserid >", value, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridGreaterThanOrEqualTo(Integer value) {
+            addCriterion("upuserid >=", value, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridLessThan(Integer value) {
+            addCriterion("upuserid <", value, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridLessThanOrEqualTo(Integer value) {
+            addCriterion("upuserid <=", value, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridIn(List<Integer> values) {
+            addCriterion("upuserid in", values, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridNotIn(List<Integer> values) {
+            addCriterion("upuserid not in", values, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridBetween(Integer value1, Integer value2) {
+            addCriterion("upuserid between", value1, value2, "upuserid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpuseridNotBetween(Integer value1, Integer value2) {
+            addCriterion("upuserid not between", value1, value2, "upuserid");
+            return (Criteria) this;
+        }
+
         public Criteria andLoanamountIsNull() {
             addCriterion("loanamount is null");
             return (Criteria) this;
@@ -511,52 +571,52 @@ public class LoanTrackingDOExample {
             return (Criteria) this;
         }
 
-        public Criteria andProfitEqualTo(Float value) {
+        public Criteria andProfitEqualTo(Double value) {
             addCriterion("profit =", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitNotEqualTo(Float value) {
+        public Criteria andProfitNotEqualTo(Double value) {
             addCriterion("profit <>", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitGreaterThan(Float value) {
+        public Criteria andProfitGreaterThan(Double value) {
             addCriterion("profit >", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitGreaterThanOrEqualTo(Float value) {
+        public Criteria andProfitGreaterThanOrEqualTo(Double value) {
             addCriterion("profit >=", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitLessThan(Float value) {
+        public Criteria andProfitLessThan(Double value) {
             addCriterion("profit <", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitLessThanOrEqualTo(Float value) {
+        public Criteria andProfitLessThanOrEqualTo(Double value) {
             addCriterion("profit <=", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitIn(List<Float> values) {
+        public Criteria andProfitIn(List<Double> values) {
             addCriterion("profit in", values, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitNotIn(List<Float> values) {
+        public Criteria andProfitNotIn(List<Double> values) {
             addCriterion("profit not in", values, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitBetween(Float value1, Float value2) {
+        public Criteria andProfitBetween(Double value1, Double value2) {
             addCriterion("profit between", value1, value2, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitNotBetween(Float value1, Float value2) {
+        public Criteria andProfitNotBetween(Double value1, Double value2) {
             addCriterion("profit not between", value1, value2, "profit");
             return (Criteria) this;
         }
@@ -631,283 +691,143 @@ public class LoanTrackingDOExample {
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusIsNull() {
-            addCriterion("acceptstatus is null");
+        public Criteria andMonthfinishIsNull() {
+            addCriterion("monthfinish is null");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusIsNotNull() {
-            addCriterion("acceptstatus is not null");
+        public Criteria andMonthfinishIsNotNull() {
+            addCriterion("monthfinish is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusEqualTo(String value) {
-            addCriterion("acceptstatus =", value, "acceptstatus");
+        public Criteria andMonthfinishEqualTo(String value) {
+            addCriterion("monthfinish =", value, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusNotEqualTo(String value) {
-            addCriterion("acceptstatus <>", value, "acceptstatus");
+        public Criteria andMonthfinishNotEqualTo(String value) {
+            addCriterion("monthfinish <>", value, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusGreaterThan(String value) {
-            addCriterion("acceptstatus >", value, "acceptstatus");
+        public Criteria andMonthfinishGreaterThan(String value) {
+            addCriterion("monthfinish >", value, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusGreaterThanOrEqualTo(String value) {
-            addCriterion("acceptstatus >=", value, "acceptstatus");
+        public Criteria andMonthfinishGreaterThanOrEqualTo(String value) {
+            addCriterion("monthfinish >=", value, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusLessThan(String value) {
-            addCriterion("acceptstatus <", value, "acceptstatus");
+        public Criteria andMonthfinishLessThan(String value) {
+            addCriterion("monthfinish <", value, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusLessThanOrEqualTo(String value) {
-            addCriterion("acceptstatus <=", value, "acceptstatus");
+        public Criteria andMonthfinishLessThanOrEqualTo(String value) {
+            addCriterion("monthfinish <=", value, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusLike(String value) {
-            addCriterion("acceptstatus like", value, "acceptstatus");
+        public Criteria andMonthfinishLike(String value) {
+            addCriterion("monthfinish like", value, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusNotLike(String value) {
-            addCriterion("acceptstatus not like", value, "acceptstatus");
+        public Criteria andMonthfinishNotLike(String value) {
+            addCriterion("monthfinish not like", value, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusIn(List<String> values) {
-            addCriterion("acceptstatus in", values, "acceptstatus");
+        public Criteria andMonthfinishIn(List<String> values) {
+            addCriterion("monthfinish in", values, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusNotIn(List<String> values) {
-            addCriterion("acceptstatus not in", values, "acceptstatus");
+        public Criteria andMonthfinishNotIn(List<String> values) {
+            addCriterion("monthfinish not in", values, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusBetween(String value1, String value2) {
-            addCriterion("acceptstatus between", value1, value2, "acceptstatus");
+        public Criteria andMonthfinishBetween(String value1, String value2) {
+            addCriterion("monthfinish between", value1, value2, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andAcceptstatusNotBetween(String value1, String value2) {
-            addCriterion("acceptstatus not between", value1, value2, "acceptstatus");
+        public Criteria andMonthfinishNotBetween(String value1, String value2) {
+            addCriterion("monthfinish not between", value1, value2, "monthfinish");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusIsNull() {
-            addCriterion("approvalstatus is null");
+        public Criteria andMonthcommitIsNull() {
+            addCriterion("monthcommit is null");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusIsNotNull() {
-            addCriterion("approvalstatus is not null");
+        public Criteria andMonthcommitIsNotNull() {
+            addCriterion("monthcommit is not null");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusEqualTo(String value) {
-            addCriterion("approvalstatus =", value, "approvalstatus");
+        public Criteria andMonthcommitEqualTo(String value) {
+            addCriterion("monthcommit =", value, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusNotEqualTo(String value) {
-            addCriterion("approvalstatus <>", value, "approvalstatus");
+        public Criteria andMonthcommitNotEqualTo(String value) {
+            addCriterion("monthcommit <>", value, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusGreaterThan(String value) {
-            addCriterion("approvalstatus >", value, "approvalstatus");
+        public Criteria andMonthcommitGreaterThan(String value) {
+            addCriterion("monthcommit >", value, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusGreaterThanOrEqualTo(String value) {
-            addCriterion("approvalstatus >=", value, "approvalstatus");
+        public Criteria andMonthcommitGreaterThanOrEqualTo(String value) {
+            addCriterion("monthcommit >=", value, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusLessThan(String value) {
-            addCriterion("approvalstatus <", value, "approvalstatus");
+        public Criteria andMonthcommitLessThan(String value) {
+            addCriterion("monthcommit <", value, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusLessThanOrEqualTo(String value) {
-            addCriterion("approvalstatus <=", value, "approvalstatus");
+        public Criteria andMonthcommitLessThanOrEqualTo(String value) {
+            addCriterion("monthcommit <=", value, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusLike(String value) {
-            addCriterion("approvalstatus like", value, "approvalstatus");
+        public Criteria andMonthcommitLike(String value) {
+            addCriterion("monthcommit like", value, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusNotLike(String value) {
-            addCriterion("approvalstatus not like", value, "approvalstatus");
+        public Criteria andMonthcommitNotLike(String value) {
+            addCriterion("monthcommit not like", value, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusIn(List<String> values) {
-            addCriterion("approvalstatus in", values, "approvalstatus");
+        public Criteria andMonthcommitIn(List<String> values) {
+            addCriterion("monthcommit in", values, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusNotIn(List<String> values) {
-            addCriterion("approvalstatus not in", values, "approvalstatus");
+        public Criteria andMonthcommitNotIn(List<String> values) {
+            addCriterion("monthcommit not in", values, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusBetween(String value1, String value2) {
-            addCriterion("approvalstatus between", value1, value2, "approvalstatus");
+        public Criteria andMonthcommitBetween(String value1, String value2) {
+            addCriterion("monthcommit between", value1, value2, "monthcommit");
             return (Criteria) this;
         }
 
-        public Criteria andApprovalstatusNotBetween(String value1, String value2) {
-            addCriterion("approvalstatus not between", value1, value2, "approvalstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusIsNull() {
-            addCriterion("replystatus is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusIsNotNull() {
-            addCriterion("replystatus is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusEqualTo(String value) {
-            addCriterion("replystatus =", value, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusNotEqualTo(String value) {
-            addCriterion("replystatus <>", value, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusGreaterThan(String value) {
-            addCriterion("replystatus >", value, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusGreaterThanOrEqualTo(String value) {
-            addCriterion("replystatus >=", value, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusLessThan(String value) {
-            addCriterion("replystatus <", value, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusLessThanOrEqualTo(String value) {
-            addCriterion("replystatus <=", value, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusLike(String value) {
-            addCriterion("replystatus like", value, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusNotLike(String value) {
-            addCriterion("replystatus not like", value, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusIn(List<String> values) {
-            addCriterion("replystatus in", values, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusNotIn(List<String> values) {
-            addCriterion("replystatus not in", values, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusBetween(String value1, String value2) {
-            addCriterion("replystatus between", value1, value2, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andReplystatusNotBetween(String value1, String value2) {
-            addCriterion("replystatus not between", value1, value2, "replystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusIsNull() {
-            addCriterion("monitorstatus is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusIsNotNull() {
-            addCriterion("monitorstatus is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusEqualTo(String value) {
-            addCriterion("monitorstatus =", value, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusNotEqualTo(String value) {
-            addCriterion("monitorstatus <>", value, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusGreaterThan(String value) {
-            addCriterion("monitorstatus >", value, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusGreaterThanOrEqualTo(String value) {
-            addCriterion("monitorstatus >=", value, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusLessThan(String value) {
-            addCriterion("monitorstatus <", value, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusLessThanOrEqualTo(String value) {
-            addCriterion("monitorstatus <=", value, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusLike(String value) {
-            addCriterion("monitorstatus like", value, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusNotLike(String value) {
-            addCriterion("monitorstatus not like", value, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusIn(List<String> values) {
-            addCriterion("monitorstatus in", values, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusNotIn(List<String> values) {
-            addCriterion("monitorstatus not in", values, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusBetween(String value1, String value2) {
-            addCriterion("monitorstatus between", value1, value2, "monitorstatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonitorstatusNotBetween(String value1, String value2) {
-            addCriterion("monitorstatus not between", value1, value2, "monitorstatus");
+        public Criteria andMonthcommitNotBetween(String value1, String value2) {
+            addCriterion("monthcommit not between", value1, value2, "monthcommit");
             return (Criteria) this;
         }
 

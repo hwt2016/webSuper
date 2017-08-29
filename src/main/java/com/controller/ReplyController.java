@@ -1,12 +1,11 @@
 package com.controller;
 
 import com.em.PeriodStatusEnum;
-import com.entity.MonitorDO;
-import com.entity.ReplyDO;
+import com.entity.*;
 import com.entityConvert.ReplyDOConvert;
 import com.entityConvert.ReplyDOConvertMethod;
-import com.service.MonitorService;
-import com.service.ReplyService;
+import com.service.*;
+import com.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,6 +30,18 @@ public class ReplyController {
 
     @Autowired
     private MonitorService monitorService;
+
+    @Autowired
+    private LoanStatisticService loanStatisticService;
+
+    @Autowired
+    private LoanService loanService;
+
+    @Autowired
+    private AscriptionService ascriptionService;
+
+    @Autowired
+    private LoanTrackingService loanTrackingService;
 
     //获取批复列表
     @RequestMapping(value = "/replyList",method = RequestMethod.GET)
@@ -91,21 +102,37 @@ public class ReplyController {
         replyDO.setId(replyid);
         //设置更新的状态：通过
         replyDO.setStatus(PeriodStatusEnum.pass.code());
-        //如果没有更新成功
+
+        //TODO 这里对数据库的操作太多，最好做成一个存储过程
         if(replyService.update(replyDO)){
             replyDO =replyService.selectReplyByID(replyid);
+            //提取该贷款的信息
+            LoanDO loanDO = loanService.selectLoanDOById(replyDO.getLoanid());
+            //获取当前时间
+            Date date = new Date(System.currentTimeMillis());
+            //选取负责该用户的上级信息
+            AscriptionDO ascriptionDO = ascriptionService.selectBydownGradeUserId(loanDO.getUserid());
+            //更新贷款统计记录
+            LoanStatisticDO loanStatisticDO = loanStatisticService.selectByUserIdAndMonthNow(ascriptionDO.getUpuserid(),date);
+            //该贷款的完成笔数加1
+            if (loanStatisticDO==null)
+                return "false";
+            else {
+                loanStatisticService.finishAdd(ascriptionDO.getUpuserid(),date);
+                //更新该笔贷款追踪信息中的完成时间
+                LoanTrackingDO loanTrackingDO = new LoanTrackingDO();
+                loanTrackingDO.setLoanid(loanDO.getId());
+                loanTrackingDO.setMonthfinish(DateUtil.getMonthFirstDay(date));
+                loanTrackingService.update(loanTrackingDO);
+            }
             //初始化一个贷后监控对象
             MonitorDO monitorDO = new MonitorDO();
             //设置审贷ID:loanid
             monitorDO.setLoanid(replyDO.getLoanid());
             //设置批复状态：批复中
             monitorDO.setStatus(PeriodStatusEnum.monitor.code());
-            //设置创建时间
-            monitorDO.setCreatetime(new Date(System.currentTimeMillis()));
-            //设置更新时间
-            monitorDO.setUpdatetime(new Date(System.currentTimeMillis()));
-            //新增一条批复记录
-            monitorService.insert(monitorDO);
+            //更新一条批复记录
+            monitorService.updateByLoanID(monitorDO);
             return "true";
         }
 

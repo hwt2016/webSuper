@@ -6,7 +6,7 @@ package com.em;
  */
 public enum PeriodStatusEnum {
 
-    accept("受理中"),approval("审批中"),reply("批复中"),monitor("贷后监控中"),end("结束"),pass("通过");
+    accept("受理中"),approval("审批中"),reply("批复中"),monitor("贷后监控中"),end("结束"),pass("通过"),wait("待定");
 
     private String code;
 

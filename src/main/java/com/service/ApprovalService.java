@@ -53,4 +53,11 @@ public class ApprovalService {
         approvalDOMapper.updateByPrimaryKeySelective(approvalDO);
         return true;
     }
+    //根据loanid更新相应的字段
+    public void updateByLoanID(ApprovalDO approvalDO){
+        ApprovalDOExample approvalDOExample = new ApprovalDOExample();
+        ApprovalDOExample.Criteria criteria = approvalDOExample.createCriteria();
+        criteria.andLoanidEqualTo(approvalDO.getLoanid());
+        approvalDOMapper.updateByExampleSelective(approvalDO,approvalDOExample);
+    }
 }

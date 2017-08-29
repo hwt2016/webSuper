@@ -40,62 +40,65 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 		
-		<table tableName="d_admin" domainObjectName="AdminDO">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+		<!--<table tableName="d_admin" domainObjectName="AdminDO">-->
+			<!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+		<!--</table>-->
 
-        <table tableName="d_house" domainObjectName="HouseDO">
+        <!--<table tableName="d_house" domainObjectName="HouseDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_loan" domainObjectName="LoanDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_service" domainObjectName="ServiceDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_user" domainObjectName="UserDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_userinfo" domainObjectName="UserInfoDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_vehicle" domainObjectName="VehicleDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_area"     domainObjectName="AreaDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_ascription"     domainObjectName="AscriptionDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_period"     domainObjectName="PeriodDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_accept"     domainObjectName="AcceptDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_approval"     domainObjectName="ApprovalDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_reply"     domainObjectName="ReplyDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="d_monitor"     domainObjectName="MonitorDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
+        <table tableName="d_loan_statistic"     domainObjectName="LoanStatisticDO">
             <generatedKey column="id" sqlStatement="mysql" identity="true" />
         </table>
-
-        <table tableName="d_loan" domainObjectName="LoanDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_service" domainObjectName="ServiceDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_user" domainObjectName="UserDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_userinfo" domainObjectName="UserInfoDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_vehicle" domainObjectName="VehicleDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_area"     domainObjectName="AreaDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_ascription"     domainObjectName="AscriptionDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_period"     domainObjectName="PeriodDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_accept"     domainObjectName="AcceptDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_approval"     domainObjectName="ApprovalDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_reply"     domainObjectName="ReplyDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
-        <table tableName="d_monitor"     domainObjectName="MonitorDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-
         <table tableName="d_loan_tracking"     domainObjectName="LoanTrackingDO">
             <generatedKey column="id" sqlStatement="mysql" identity="true" />
         </table>

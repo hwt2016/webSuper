@@ -47,9 +47,27 @@ public class ReplyService {
         return replyDO;
     }
 
+    /**
+     * 根据主键id更新相关字段
+     * @param replyDO
+     * @return
+     */
     public boolean update(ReplyDO replyDO) {
         replyDO.setUpdatetime(new Date(System.currentTimeMillis()));
         replyDOMapper.updateByPrimaryKeySelective(replyDO);
         return true;
     }
+
+    /**
+     * 根据loanid更新
+     *更新replyDO不为null的字段
+     * @param replyDO
+     */
+    public void updateByLoanID(ReplyDO replyDO){
+        ReplyDOExample replyDOExample = new ReplyDOExample();
+        ReplyDOExample.Criteria criteria = replyDOExample.createCriteria();
+        criteria.andLoanidEqualTo(replyDO.getLoanid());
+        replyDOMapper.updateByExampleSelective(replyDO,replyDOExample);
+    }
+
 }

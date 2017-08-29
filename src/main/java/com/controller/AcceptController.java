@@ -120,12 +120,8 @@ public class AcceptController {
             approvalDO.setStatus(PeriodStatusEnum.approval.code());
             //设置审贷ID:loanid
             approvalDO.setLoanid(acceptDO.getLoanid());
-            //设置创建时间
-            approvalDO.setCreatetime(new Date(System.currentTimeMillis()));
-            //设置更新时间
-            approvalDO.setUpdatetime(new Date(System.currentTimeMillis()));
-            //新增一条审批记录
-            approvalService.insert(approvalDO);
+            //更新审批记录
+            approvalService.updateByLoanID(approvalDO);
             return "true";
         }
 

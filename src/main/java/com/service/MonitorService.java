@@ -51,4 +51,15 @@ public class MonitorService {
         monitorDOMapper.updateByPrimaryKeySelective(monitorDO);
         return true;
     }
+
+    /**
+     * 根据loanid更新部分字段
+     * @param monitorDO
+     */
+    public void updateByLoanID(MonitorDO monitorDO){
+        MonitorDOExample monitorDOExample = new MonitorDOExample();
+        MonitorDOExample.Criteria criteria = monitorDOExample.createCriteria();
+        criteria.andLoanidEqualTo(monitorDO.getLoanid());
+        monitorDOMapper.updateByExampleSelective(monitorDO,monitorDOExample);
+    }
 }

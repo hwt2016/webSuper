@@ -99,12 +99,8 @@ public class ApprovalController {
             replyDO.setLoanid(approvalDO.getLoanid());
             //设置批复状态：批复中
             replyDO.setStatus(PeriodStatusEnum.reply.code());
-            //设置创建时间
-            replyDO.setCreatetime(new Date(System.currentTimeMillis()));
-            //设置更新时间
-            replyDO.setUpdatetime(new Date(System.currentTimeMillis()));
-            //新增一条批复记录
-            replyService.insert(replyDO);
+            //更新一条批复记录
+            replyService.updateByLoanID(replyDO);
             return "true";
         }
 
