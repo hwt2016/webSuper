@@ -15,7 +15,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="org.gjt.mm.mysql.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/qd_xqjr?useSSL=false" userId="root"
+                        connectionURL="jdbc:mysql://106.15.196.117:3306/qd_xqjr?useSSL=false" userId="root"
                         password="111111">
         </jdbcConnection>
 
@@ -96,10 +96,13 @@
             <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
         <!--</table>-->
 
-        <table tableName="d_loan_statistic"     domainObjectName="LoanStatisticDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
-        <table tableName="d_loan_tracking"     domainObjectName="LoanTrackingDO">
+        <!--<table tableName="d_loan_statistic"     domainObjectName="LoanStatisticDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+        <!--<table tableName="d_loan_tracking"     domainObjectName="LoanTrackingDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+        <table tableName="v_user_loaninfo_status"     domainObjectName="VLoanInfoStatusDO">
             <generatedKey column="id" sqlStatement="mysql" identity="true" />
         </table>
 

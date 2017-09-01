@@ -20,4 +20,10 @@ public class Constant {
     //用户信息本地存储地址
     public static final String USER_LOCAL_DIR = "C:\\user\\";
 
+
+    //短信url(互亿无线)
+    public static final String SMS_URL = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
+    public static final String SMS_ACCOUNT ="C09281441";
+    public static final String SMS_PWD ="736f666e055061780a179d726fbf5ee5";
+
 }

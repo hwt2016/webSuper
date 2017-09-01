@@ -85,8 +85,8 @@ public class PaginationPlugin extends PluginAdapter {
         String[] arg = { "-configfile", config, "-overwrite" };
         ShellRunner.main(arg);
     }
-//    public static void main(String[] args) {
-//        generate();
-//    }
+    public static void main(String[] args) {
+        generate();
+    }
 
 }
