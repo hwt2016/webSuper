@@ -34,6 +34,12 @@ public class AppLoanTrackingController {
         return loanTrackingDOS;
     }
 
+    /**
+     * 根据上级upuserid和完成日期提取贷款追踪新信息
+     * @param upuserid
+     * @param monthfinish
+     * @return
+     */
     @RequestMapping(value = "/appLoanTrackingSearchByMonthFinish")
     @ResponseBody
     public List<LoanTrackingDO> appLoanTrackingSearchByMonthFinish(int upuserid, String monthfinish){
@@ -44,6 +50,16 @@ public class AppLoanTrackingController {
         return loanTrackingDOS;
     }
 
-
+    /**
+     * 根据userid提取改用户的所有贷款追踪信息
+     * @param userid
+     * @return
+     */
+    @RequestMapping(value = "/appLoanTrackingGetByUserId")
+    @ResponseBody
+    public List<LoanTrackingDO> appLoanTrackingGetByUserId(int userid){
+        List<LoanTrackingDO> loanTrackingDOS = loanTrackingService.selectLoanTrackingDOSByUserID(userid);
+        return loanTrackingDOS;
+    }
 
 }

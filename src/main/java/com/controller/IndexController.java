@@ -74,13 +74,20 @@ public class IndexController {
      * 注册//TODO 少了一步验证码
      * @param phone 手机号
      * @param password 密码
-     * @return
+     * @return（0：注册异常 1:注册成功 2：手机已注册 3：手机验证码不正确
      */
     @ResponseBody
     @RequestMapping(value = "/registerByInvite",method = RequestMethod.POST)
-    public String registerByInvite(String phone,String password,String recommendPhone){
+    public String registerByInvite(String phone,String password,String recommendPhone,String code,HttpSession session){
+        //推荐人填写错误 返回0
         if(recommendPhone.equals("")||recommendPhone==null||phone.equals("")||phone==null)
             return "0";
+        String cellphone=session.getAttribute("cellphone").toString();
+        String cellcode = session.getAttribute("cellcode").toString();
+        //手机验证码不正确返回3
+        if(!(cellphone.equals(phone)&&cellcode.equals(code)))
+            return "3";
+
         UserDO userRecommend =new UserDO();
         userRecommend.setPhone(recommendPhone);
         if(userService.IfExists(userRecommend)){
@@ -162,6 +169,14 @@ public class IndexController {
 
         return "admin/welcome";
     }
+
+    //欢迎界面
+    @RequestMapping(value = "/appDownload",method = RequestMethod.GET)
+    public String appDownload(){
+
+        return "user/appDownload";
+    }
+
 
 
 

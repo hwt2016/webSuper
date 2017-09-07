@@ -67,6 +67,19 @@ public class UserService {
             return false;
     }
 
+    //根据手机号判断用户是否存在
+    public boolean IfExistsByPhone(String phone){
+        UserDOExample userDOExample= new UserDOExample();
+        UserDOExample.Criteria criteria = userDOExample.createCriteria();
+        criteria.andPhoneEqualTo(phone);
+        criteria.andStatusNotEqualTo(StatusEnum.DELETED.code());
+        List<UserDO> userDOS = userDOMapper.selectByExample(userDOExample);
+        if(userDOS.size()!=0)
+            return true;
+        else
+            return false;
+    }
+
     //根据userid判断用户是否存在
     public boolean IfExistsByUserId(int userid){
         UserDOExample userDOExample= new UserDOExample();

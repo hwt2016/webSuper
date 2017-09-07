@@ -1,5 +1,6 @@
 package com.appController;
 
+import com.em.GradeEnum;
 import com.entity.UserDO;
 import com.service.UserService;
 import com.util.JsonConvert;
@@ -35,6 +36,54 @@ public class AppUserController {
             return "0";
         else{
             UserDO userselect= userService.selectUserByPhone(userDO);
+            if(userDO.getPassword().equals(userselect.getPassword())&&userDO.getPassword()!=null&&userDO.getPhone()!=null)
+                //如果验证成功，则返回1
+                return "1";
+            else
+                //如果密码不匹配，则返回2
+                return "2";
+        }
+    }
+
+    /**
+     *
+     * @param userDO
+     * @return (0:用户不存在 1：验证成功 2密码不正确）
+     */
+    @RequestMapping(value = "/appUserCLogin",method = RequestMethod.GET)
+    @ResponseBody
+    public String appUserCLogin(UserDO userDO){
+        //如果不存在，则返回code=0
+        if(!userService.IfExists(userDO))
+            return "0";
+        else{
+            UserDO userselect= userService.selectUserByPhone(userDO);
+            if(!userselect.getGrade().equals(GradeEnum.C.code()))
+                return "0";
+            if(userDO.getPassword().equals(userselect.getPassword())&&userDO.getPassword()!=null&&userDO.getPhone()!=null)
+                //如果验证成功，则返回1
+                return "1";
+            else
+                //如果密码不匹配，则返回2
+                return "2";
+        }
+    }
+
+    /**
+     *
+     * @param userDO
+     * @return (0:用户不存在 1：验证成功 2密码不正确）
+     */
+    @RequestMapping(value = "/appUserABLogin",method = RequestMethod.GET)
+    @ResponseBody
+    public String appUserABLogin(UserDO userDO){
+        //如果不存在，则返回code=0
+        if(!userService.IfExists(userDO))
+            return "0";
+        else{
+            UserDO userselect= userService.selectUserByPhone(userDO);
+            if(!(userselect.getGrade().equals(GradeEnum.A.code())||userselect.getGrade().equals(GradeEnum.B.code())))
+                return "0";
             if(userDO.getPassword().equals(userselect.getPassword())&&userDO.getPassword()!=null&&userDO.getPhone()!=null)
                 //如果验证成功，则返回1
                 return "1";

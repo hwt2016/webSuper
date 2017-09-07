@@ -37,11 +37,14 @@ public class LoanController {
         UserDO userDO = userService.selectUserById(loanDO.getUserid());
         //根据LoanID提取贷款追踪信息
         LoanTrackingDO loanTrackingDO = loanTrackingService.selectLoanTackingDOByLoanId(loanid);
+//        //根据UpUserID提取该用户的上级信息
+//        UserDO upUserDO= userService.selectUserById(loanTrackingDO.getUpuserid());
 
         //注入信息
         modelMap.addAttribute("userInfo",userDO);
         modelMap.addAttribute("loanInfo",loanDO);
         modelMap.addAttribute("loanTacking",loanTrackingDO);
+//        modelMap.addAttribute("upuserInfo",upUserDO);
 
         return  "admin/period/loanInfoRead";
     }

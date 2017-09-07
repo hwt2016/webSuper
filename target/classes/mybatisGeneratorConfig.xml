@@ -102,8 +102,12 @@
         <!--<table tableName="d_loan_tracking"     domainObjectName="LoanTrackingDO">-->
             <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
         <!--</table>-->
+        <!--<table tableName="v_user_loaninfo_status"     domainObjectName="VLoanInfoStatusDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
+
         <table tableName="v_user_loaninfo_status"     domainObjectName="VLoanInfoStatusDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        <generatedKey column="id" sqlStatement="mysql" identity="true" />
         </table>
 
     </context>

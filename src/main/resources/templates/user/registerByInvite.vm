@@ -22,23 +22,33 @@
     <![endif]-->
     <title>欢迎注册</title>
 </head>
-<body>
+<body background="/img/img2.jpg">
 <article class="page-container">
     <form class="form form-horizontal" id="form-admin-add">
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机号：</label>
+            <label class="form-label col-xs-4 col-sm-2"  style="color:white"><span class="c-red">*</span>手机号：</label>
             <div class="formControls col-xs-8 col-sm-3">
-                <input type="text" class="input-text" value="" placeholder="" id="phone" name="phone">
+                <input type="text" class="input-text" value="" placeholder="手机号" id="phone" name="phone">
+            </div>
+
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" style="color:white">验证码：</label>
+            <div class="formControls col-xs-4 col-sm-3">
+                <input type="text" class="input-text" value="" placeholder="请输入验证码" id="code" name="code">
+            </div>
+            <div class="formControls col-xs-4 col-sm-3">
+                <input id="btnSendCode" type="button" class="btn btn-primary radius"  value="发送验证码" onclick="sendMessage(this)" />
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>初始密码：</label>
+            <label class="form-label col-xs-4 col-sm-2" style="color:white">密码：</label>
             <div class="formControls col-xs-8 col-sm-3">
                 <input type="password" class="input-text" autocomplete="off" value="" placeholder="密码" id="password" name="password">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
+            <label class="form-label col-xs-4 col-sm-2" style="color:white"><span class="c-red">*</span>确认密码：</label>
             <div class="formControls col-xs-8 col-sm-3">
                 <input type="password" class="input-text" autocomplete="off"  placeholder="确认新密码" id="password2" name="password2">
             </div>
@@ -73,17 +83,21 @@
 
         $("#form-admin-add").validate({
             rules:{
+                code:{
+                    required:true,
+                },
                 password:{
                     required:true,
                 },
                 password2:{
                     required:true,
-                    equalTo: "#password"
+                    equalTo: "#password",
                 },
                 phone:{
                     required:true,
                     isPhone:true,
                 },
+
             },
             onkeyup:false,
             focusCleanup:true,
@@ -93,12 +107,18 @@
                     type: 'post',
                     url: "/index/registerByInvite" ,
                     success: function(data){
-                        if(data=="1")
+                        if(data=="1"){
                             layer.msg('注册成功!',{icon:1,time:1000});
-                        else if(data=="2")
+                            window.location = "/xqjr/appDownload";
+                        }
+                        else if(data=="2"){
                             layer.msg("手机号已注册",{icon:2,time:1000});
+
+                        }
                         else if(data=="0")
                             layer.msg("注册异常",{icon:2,time:1000});
+                        else if(data=="3")
+                            layer.msg("手机验证码不正确",{icon:2,time:1000});
                     },
                     error: function(XmlHttpRequest, textStatus, errorThrown){
                         layer.msg('error!',{icon:1,time:1000});
@@ -110,6 +130,57 @@
             }
         });
     });
+<!-- 验证码发送-->
+    var InterValObj; //timer变量，控制时间
+    var count = 60; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+
+    function sendMessage(obj) {
+        var phone = $("#phone").val();
+        if($("#phone").val()==""){
+            $("#phone").attr('placeholder','请先输入手机号')
+            return;
+        }
+        //向后台发送处理数据
+        $.ajax({
+            type: 'POST', //用POST方式传输
+            url: '/sms/sendSMS', //目标地址
+            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            data:{phone:phone},
+            success: function(data){;
+                if(data=="1") {
+                    curCount = count;
+                    //设置button效果，开始计时
+                    $("#btnSendCode").attr("disabled", "true");
+                    $("#btnSendCode").val("请在" + curCount + "秒内输入验证码");
+                    InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                }
+                else if(data=="3"){
+                    layer.msg("账号已注册",{icon:2,time:1000});
+                }
+
+            },
+            error:function(data) {
+                console.log(data.msg);
+            },
+        });
+    }
+
+
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            window.clearInterval(InterValObj);//停止计时器
+            $("#btnSendCode").removeAttr("disabled");//启用按钮
+            $("#btnSendCode").val("重新发送验证码");
+        }
+        else {
+            curCount--;
+            $("#btnSendCode").val("请在" + curCount + "秒内输入验证码");
+        }
+    }
+
+
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>

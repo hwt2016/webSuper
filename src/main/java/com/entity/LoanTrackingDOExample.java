@@ -441,6 +441,66 @@ public class LoanTrackingDOExample {
             return (Criteria) this;
         }
 
+        public Criteria andUseridIsNull() {
+            addCriterion("userid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridIsNotNull() {
+            addCriterion("userid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridEqualTo(Integer value) {
+            addCriterion("userid =", value, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridNotEqualTo(Integer value) {
+            addCriterion("userid <>", value, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridGreaterThan(Integer value) {
+            addCriterion("userid >", value, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridGreaterThanOrEqualTo(Integer value) {
+            addCriterion("userid >=", value, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridLessThan(Integer value) {
+            addCriterion("userid <", value, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridLessThanOrEqualTo(Integer value) {
+            addCriterion("userid <=", value, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridIn(List<Integer> values) {
+            addCriterion("userid in", values, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridNotIn(List<Integer> values) {
+            addCriterion("userid not in", values, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridBetween(Integer value1, Integer value2) {
+            addCriterion("userid between", value1, value2, "userid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseridNotBetween(Integer value1, Integer value2) {
+            addCriterion("userid not between", value1, value2, "userid");
+            return (Criteria) this;
+        }
+
         public Criteria andUpuseridIsNull() {
             addCriterion("upuserid is null");
             return (Criteria) this;
@@ -691,76 +751,6 @@ public class LoanTrackingDOExample {
             return (Criteria) this;
         }
 
-        public Criteria andMonthfinishIsNull() {
-            addCriterion("monthfinish is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishIsNotNull() {
-            addCriterion("monthfinish is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishEqualTo(String value) {
-            addCriterion("monthfinish =", value, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishNotEqualTo(String value) {
-            addCriterion("monthfinish <>", value, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishGreaterThan(String value) {
-            addCriterion("monthfinish >", value, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishGreaterThanOrEqualTo(String value) {
-            addCriterion("monthfinish >=", value, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishLessThan(String value) {
-            addCriterion("monthfinish <", value, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishLessThanOrEqualTo(String value) {
-            addCriterion("monthfinish <=", value, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishLike(String value) {
-            addCriterion("monthfinish like", value, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishNotLike(String value) {
-            addCriterion("monthfinish not like", value, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishIn(List<String> values) {
-            addCriterion("monthfinish in", values, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishNotIn(List<String> values) {
-            addCriterion("monthfinish not in", values, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishBetween(String value1, String value2) {
-            addCriterion("monthfinish between", value1, value2, "monthfinish");
-            return (Criteria) this;
-        }
-
-        public Criteria andMonthfinishNotBetween(String value1, String value2) {
-            addCriterion("monthfinish not between", value1, value2, "monthfinish");
-            return (Criteria) this;
-        }
-
         public Criteria andMonthcommitIsNull() {
             addCriterion("monthcommit is null");
             return (Criteria) this;
@@ -828,6 +818,76 @@ public class LoanTrackingDOExample {
 
         public Criteria andMonthcommitNotBetween(String value1, String value2) {
             addCriterion("monthcommit not between", value1, value2, "monthcommit");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishIsNull() {
+            addCriterion("monthfinish is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishIsNotNull() {
+            addCriterion("monthfinish is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishEqualTo(String value) {
+            addCriterion("monthfinish =", value, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishNotEqualTo(String value) {
+            addCriterion("monthfinish <>", value, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishGreaterThan(String value) {
+            addCriterion("monthfinish >", value, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishGreaterThanOrEqualTo(String value) {
+            addCriterion("monthfinish >=", value, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishLessThan(String value) {
+            addCriterion("monthfinish <", value, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishLessThanOrEqualTo(String value) {
+            addCriterion("monthfinish <=", value, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishLike(String value) {
+            addCriterion("monthfinish like", value, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishNotLike(String value) {
+            addCriterion("monthfinish not like", value, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishIn(List<String> values) {
+            addCriterion("monthfinish in", values, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishNotIn(List<String> values) {
+            addCriterion("monthfinish not in", values, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishBetween(String value1, String value2) {
+            addCriterion("monthfinish between", value1, value2, "monthfinish");
+            return (Criteria) this;
+        }
+
+        public Criteria andMonthfinishNotBetween(String value1, String value2) {
+            addCriterion("monthfinish not between", value1, value2, "monthfinish");
             return (Criteria) this;
         }
 

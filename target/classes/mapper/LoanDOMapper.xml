@@ -32,7 +32,7 @@
     <result column="cardBank" jdbcType="VARCHAR" property="cardbank" />
     <result column="idCardFrontPic" jdbcType="VARCHAR" property="idcardfrontpic" />
     <result column="idCardBackPic" jdbcType="VARCHAR" property="idcardbackpic" />
-    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
   </resultMap>
@@ -110,7 +110,7 @@
     id, userid, sex, marriage, countOfChildren, education, address, company, position, 
     companyAddress, shareRatio, ageOfWork, annualIncome, hiredate, kinName, kinPhone, 
     loanAmount, loanTerm, expectedLoanForm, estimatedLoan, cardholder, cardNumber, cardPhone, 
-    cardBank, idCardFrontPic, idCardBackPic, state, createtime, updatetime
+    cardBank, idCardFrontPic, idCardBackPic, status, createtime, updatetime
   </sql>
   <select id="selectByExample" parameterType="com.entity.LoanDOExample" resultMap="BaseResultMap">
     <!--
@@ -177,7 +177,7 @@
       loanAmount, loanTerm, expectedLoanForm, 
       estimatedLoan, cardholder, cardNumber, 
       cardPhone, cardBank, idCardFrontPic, 
-      idCardBackPic, state, createtime, 
+      idCardBackPic, status, createtime, 
       updatetime)
     values (#{userid,jdbcType=INTEGER}, #{sex,jdbcType=VARCHAR}, #{marriage,jdbcType=VARCHAR}, 
       #{countofchildren,jdbcType=INTEGER}, #{education,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
@@ -187,7 +187,7 @@
       #{loanamount,jdbcType=REAL}, #{loanterm,jdbcType=INTEGER}, #{expectedloanform,jdbcType=VARCHAR}, 
       #{estimatedloan,jdbcType=INTEGER}, #{cardholder,jdbcType=VARCHAR}, #{cardnumber,jdbcType=VARCHAR}, 
       #{cardphone,jdbcType=VARCHAR}, #{cardbank,jdbcType=VARCHAR}, #{idcardfrontpic,jdbcType=VARCHAR}, 
-      #{idcardbackpic,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{idcardbackpic,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
       #{updatetime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.entity.LoanDO">
@@ -275,8 +275,8 @@
       <if test="idcardbackpic != null">
         idCardBackPic,
       </if>
-      <if test="state != null">
-        state,
+      <if test="status != null">
+        status,
       </if>
       <if test="createtime != null">
         createtime,
@@ -361,8 +361,8 @@
       <if test="idcardbackpic != null">
         #{idcardbackpic,jdbcType=VARCHAR},
       </if>
-      <if test="state != null">
-        #{state,jdbcType=VARCHAR},
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
       </if>
       <if test="createtime != null">
         #{createtime,jdbcType=TIMESTAMP},
@@ -467,8 +467,8 @@
       <if test="record.idcardbackpic != null">
         idCardBackPic = #{record.idcardbackpic,jdbcType=VARCHAR},
       </if>
-      <if test="record.state != null">
-        state = #{record.state,jdbcType=VARCHAR},
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
       </if>
       <if test="record.createtime != null">
         createtime = #{record.createtime,jdbcType=TIMESTAMP},
@@ -513,7 +513,7 @@
       cardBank = #{record.cardbank,jdbcType=VARCHAR},
       idCardFrontPic = #{record.idcardfrontpic,jdbcType=VARCHAR},
       idCardBackPic = #{record.idcardbackpic,jdbcType=VARCHAR},
-      state = #{record.state,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
       createtime = #{record.createtime,jdbcType=TIMESTAMP},
       updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
@@ -602,8 +602,8 @@
       <if test="idcardbackpic != null">
         idCardBackPic = #{idcardbackpic,jdbcType=VARCHAR},
       </if>
-      <if test="state != null">
-        state = #{state,jdbcType=VARCHAR},
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
       </if>
       <if test="createtime != null">
         createtime = #{createtime,jdbcType=TIMESTAMP},
@@ -645,7 +645,7 @@
       cardBank = #{cardbank,jdbcType=VARCHAR},
       idCardFrontPic = #{idcardfrontpic,jdbcType=VARCHAR},
       idCardBackPic = #{idcardbackpic,jdbcType=VARCHAR},
-      state = #{state,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
