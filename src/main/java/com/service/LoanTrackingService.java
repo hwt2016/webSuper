@@ -106,6 +106,19 @@ public class LoanTrackingService {
     }
 
     /**
+     * 根据upuserid提取他所有的贷款信息
+     * @param upuserid
+     * @return
+     */
+    public List<LoanTrackingDO> selectLoanTrackingDOSByUpUserID(int upuserid){
+        LoanTrackingDOExample loanTrackingDOExample= new LoanTrackingDOExample();
+        LoanTrackingDOExample.Criteria criteria = loanTrackingDOExample.createCriteria();
+        criteria.andUpuseridEqualTo(upuserid);
+        List<LoanTrackingDO> loanTrackingDOS = loanTrackingDOMapper.selectByExample(loanTrackingDOExample);
+        return loanTrackingDOS;
+    }
+
+    /**
      * 根据上级upuserid得出最早的一笔贷款信息日期
      * @param upuserid
      * @return

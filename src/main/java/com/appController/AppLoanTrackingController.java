@@ -62,4 +62,18 @@ public class AppLoanTrackingController {
         return loanTrackingDOS;
     }
 
+    /**
+     * 根据userid提取改用户的所有贷款追踪信息
+     * @param upuserid
+     * @return
+     */
+    @RequestMapping(value = "/appLoanTrackingGetByUpUserId")
+    @ResponseBody
+    public List<LoanTrackingDO> appLoanTrackingGetByUpUserId(int upuserid){
+        List<LoanTrackingDO> loanTrackingDOS = loanTrackingService.selectLoanTrackingDOSByUpUserID(upuserid);
+        return loanTrackingDOS;
+    }
+
+
+
 }

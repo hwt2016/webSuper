@@ -106,7 +106,7 @@
             <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
         <!--</table>-->
 
-        <table tableName="v_user_loaninfo_status"     domainObjectName="VLoanInfoStatusDO">
+        <table tableName="v_user_income"     domainObjectName="VUserIncomeDO">
         <generatedKey column="id" sqlStatement="mysql" identity="true" />
         </table>
 

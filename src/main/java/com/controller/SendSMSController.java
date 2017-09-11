@@ -32,6 +32,7 @@ public class SendSMSController{
         if(userService.IfExistsByPhone(phone))
             return "3";
         String cellcode= SmsUtil.post(phone);
+        System.out.println("验证码为="+cellcode);
         session.setAttribute("cellphone",phone);
         session.setAttribute("cellcode",cellcode);
         return "1";

@@ -5,9 +5,11 @@ import com.em.GradeEnum;
 import com.entity.AdminDO;
 import com.entity.AscriptionDO;
 import com.entity.UserDO;
+import com.entity.UserIncomeDO;
 import com.google.zxing.WriterException;
 import com.oss.PostObject;
 import com.service.AscriptionService;
+import com.service.UserIncomeService;
 import com.service.UserService;
 import com.util.ZxingUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,9 @@ public class IndexController {
 
     @Autowired
     private AscriptionService ascriptionService;
+
+    @Autowired
+    private UserIncomeService userIncomeService;
 
     //获取登录界面
     @RequestMapping(value = "/login",method = RequestMethod.GET)
@@ -95,6 +100,7 @@ public class IndexController {
             userDO.setPhone(phone);
             userDO.setPassword(password);
             userDO.setStatus("正常");
+            userDO.setGrade(GradeEnum.C.code());
             if(userService.IfExists(userDO))
                 return "2";//新用户已注册
             //生成二维码，并上传到阿里OSS上
@@ -123,6 +129,13 @@ public class IndexController {
                 userRecommend=userService.selectUserByPhone(userRecommend);
 
                 System.out.println("新用户id="+userDO.getId()+"推荐人id:"+userRecommend.getId());
+                //初始化该用户的收入表
+                UserIncomeDO userIncomeDO = new UserIncomeDO();
+                userIncomeDO.setUserid(userDO.getId());
+                userIncomeDO.setStatus("正常");
+                userIncomeDO.setIncome(0.0);
+                userIncomeDO.setUpincome(0.0);
+                userIncomeService.insert(userIncomeDO);
                 //如果推荐人的等级为C
                 if(userRecommend.getGrade().equals(GradeEnum.C.code())){
                     //提取推荐人（M)归属关系信息
