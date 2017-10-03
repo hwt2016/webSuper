@@ -193,8 +193,8 @@ public class PostObject {
 
 //    public static void main(String[] args) throws Exception {
 //        PostObject ossPostObject = new PostObject();
-//        String key = "user/"+"18899992222"+"/qrcode.png";
-//        String loacalPath = "C:\\user\\"+"18899992222"+".png";
+//        String key = "user/"+"13808955973"+"/qrcode.png";
+//        String loacalPath = "C:\\user\\"+"13808955973"+".png";
 //        ossPostObject.PostObject(key,loacalPath);
 //    }
 

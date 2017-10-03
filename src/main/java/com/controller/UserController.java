@@ -6,6 +6,7 @@ import com.em.GradeEnum;
 import com.em.StatusEnum;
 import com.entity.*;
 import com.service.*;
+import com.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -78,6 +79,7 @@ public class UserController {
         userDO.setDistrict(areaDO.getDistrict());
         //设置状态
         userDO.setStatus(StatusEnum.NORMAL.code());
+        userDO.setPassword(MD5Util.GetMD5Code(userDO.getPassword()));
         userService.insert(userDO);
         return "添加成功";
     }

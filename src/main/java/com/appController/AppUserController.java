@@ -4,6 +4,7 @@ import com.em.GradeEnum;
 import com.entity.UserDO;
 import com.service.UserService;
 import com.util.JsonConvert;
+import com.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +29,7 @@ public class AppUserController {
     @RequestMapping(value = "/appUserLogin",method = RequestMethod.GET)
     @ResponseBody
     public String appUserLogin(UserDO userDO){
-
+        userDO.setPassword(MD5Util.GetMD5Code(userDO.getPassword()));
 
         //如果不存在，则返回code=0
         if(!userService.IfExists(userDO))
@@ -53,6 +54,7 @@ public class AppUserController {
     @RequestMapping(value = "/appUserCLogin",method = RequestMethod.GET)
     @ResponseBody
     public String appUserCLogin(UserDO userDO){
+        userDO.setPassword(MD5Util.GetMD5Code(userDO.getPassword()));
         //如果不存在，则返回code=0
         if(!userService.IfExists(userDO))
             return "0";
@@ -77,6 +79,7 @@ public class AppUserController {
     @RequestMapping(value = "/appUserABLogin",method = RequestMethod.GET)
     @ResponseBody
     public String appUserABLogin(UserDO userDO){
+        userDO.setPassword(MD5Util.GetMD5Code(userDO.getPassword()));
         //如果不存在，则返回code=0
         if(!userService.IfExists(userDO))
             return "0";
@@ -123,6 +126,49 @@ public class AppUserController {
         if(userService.update(userDO))
             return "1";
         return "2";
+    }
+
+    /**
+     *
+     * @param phone
+     * @param password
+     * @return 1:注册成功  0：注册异常（可能是推荐人手机号被篡改） 4：数据库注册异常  2：用户已注册
+     */
+    @ResponseBody
+    @RequestMapping(value = "/appUserRegister",method = RequestMethod.GET)
+    public String  appUserRegister(String phone,String password){
+        if(phone==null||phone.length()!=11||password==null)
+            return "2";
+        //采用md5加密
+        password= MD5Util.GetMD5Code(password);
+        return userService.userInsertByApp(phone,password);
+    }
+
+    /**
+     *
+     * @param phone
+     * @param password
+     * @return  0:用户不存在 1：修改密码成功 2：数据库密码更新异常
+     */
+    @ResponseBody
+    @RequestMapping(value = "/appUserPwdModify",method = RequestMethod.GET)
+    public String appUserPwdModify(String phone,String password){
+        if(phone==null||phone.length()!=11||password==null)
+            return "0";
+        //如果用户存在，则修改密码
+        if(userService.IfExistsByPhone(phone)){
+            //采用md5加密
+            password= MD5Util.GetMD5Code(password);
+            UserDO userDO = new UserDO();
+            userDO.setPhone(phone);
+            userDO.setPassword(password);
+            if(userService.updateByPhone(userDO))
+                return "1";
+            else
+                return "2";
+        }else{
+            return "0";
+        }
     }
 
 

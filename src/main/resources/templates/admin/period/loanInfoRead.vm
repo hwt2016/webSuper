@@ -115,6 +115,7 @@
                     #if($!{loanInfo.marriage} ==1 ) 已婚 #end
                     #if($!{loanInfo.marriage} ==2 ) 未婚 #end
                     #if($!{loanInfo.marriage} ==3 ) 离异 #end
+                    #if($!{loanInfo.marriage} ==4 ) 其他 #end
                 </label>
             </div>
 
@@ -275,7 +276,7 @@
                     url: "/user/addOfService" ,
                     success: function(data){
                         if(data=="false")
-                            layer.msg("手机号已注册",{icon:2,time:1000});
+                           .});
                         else
                             layer.msg(data,{icon:1,time:1000})
                     },

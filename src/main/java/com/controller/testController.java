@@ -24,6 +24,8 @@ public class testController {
     @Autowired
     private UserService userService;
 
+
+
 //    @RequestMapping(value = "/appUserLogin",method = RequestMethod.POST)
 //    @ResponseBody
 //    public String test(String username,String password){
@@ -36,6 +38,9 @@ public class testController {
         modelMap.addAttribute("userid",21);
         return "test/index";
     }
+
+
+
     @RequestMapping(value = "/appUserLogin",method = RequestMethod.GET)
     @ResponseBody
     public String test(UserDO userDO){

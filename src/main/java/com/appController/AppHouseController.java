@@ -47,6 +47,7 @@ public class AppHouseController {
     @ResponseBody
     @RequestMapping(value = "/appHouseUpadteALL",method = RequestMethod.POST)
     public String appHouseUpadteALL(String jsonHouse){
+        System.out.println("更新所有房产");
         if(jsonHouse==null||jsonHouse.equals(""))
             return "0";
         List<HouseDO> houseDOList= null;

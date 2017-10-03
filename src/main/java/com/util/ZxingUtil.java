@@ -61,14 +61,12 @@ public class ZxingUtil {
         return new MultiFormatReader().decode(new BinaryBitmap(new HybridBinarizer(new BufferedImageLuminanceSource(ImageIO.read(new FileInputStream(filePath))))),decodeMap).getText();
     }
 
-
+//
 //    public static void main(String [] arg){
 //        try{
-//            String qrcodePath="C:\\user\\"+"18899992222"+".png";
-//            createQRCode("http://106.15.72.63:8088/index/registerByInvite?recommendPhone=18899992222", new File(qrcodePath));
+//            String qrcodePath="C:\\user\\"+"13808955973"+".png";
+//            createQRCode("http://106.15.196.117:8088/index/registerByInvite?recommendPhone=13808955973", new File(qrcodePath));
 //            System.out.println(readQRCode(qrcodePath));
-//            //源码下载地址：http://download.csdn.net/detail/xmt1139057136/8886473
-//            //欢迎大家关注我的博客！如有疑问,请加QQ群：454796847共同学习！
 //        }catch(Exception e){
 //            e.printStackTrace();
 //        }

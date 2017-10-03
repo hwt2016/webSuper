@@ -20,7 +20,7 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>欢迎注册</title>
+    <title>欢迎注册小桥金融</title>
 </head>
 <body background="/img/img2.jpg">
 <article class="page-container">
@@ -109,7 +109,7 @@
                     success: function(data){
                         if(data=="1"){
                             layer.msg('注册成功!',{icon:1,time:1000});
-                            window.location = "/xqjr/appDownload";
+                            window.location = "/index/appDownload";
                         }
                         else if(data=="2"){
                             layer.msg("手机号已注册",{icon:2,time:1000});
