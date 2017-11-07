@@ -27,9 +27,15 @@
 
         <div class="row cl">
             <a   href="http://xqjr.oss-cn-hangzhou.aliyuncs.com/download/xqjrC.apk" style="color:white">
-                <img  style="margin-left: 30%;margin-top: 10%" src="/img/download.jpg" >
+                <img  style="margin-left: 10%;margin-top: 10%" src="/img/downloadAndroid.jpg" >
+            </a>
+
+            <a   href="http://xqjr.oss-cn-hangzhou.aliyuncs.com/download/xqjrC.apk" style="color:white">
+                <img  style="margin-left: 10%;margin-top: 10%" src="/img/downloadIOS.jpg" >
             </a>
         </div>
+
+
 
 </article>
 

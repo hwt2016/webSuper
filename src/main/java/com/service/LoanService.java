@@ -138,9 +138,12 @@ public class LoanService {
                 }else {
                     loanStatisticService.commitAdd(ascriptionDO.getUpuserid(),date);
                 }
+                System.out.println("添加贷款信息成功");
                 return "1";
+            }else {
+                return "2";
             }
-            return "2";
+
         }catch (Exception e){
             e.printStackTrace();
             return "2";

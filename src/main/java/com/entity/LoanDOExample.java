@@ -1128,6 +1128,76 @@ public class LoanDOExample {
             return (Criteria) this;
         }
 
+        public Criteria andCompanyofnatureIsNull() {
+            addCriterion("companyofnature is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureIsNotNull() {
+            addCriterion("companyofnature is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureEqualTo(String value) {
+            addCriterion("companyofnature =", value, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureNotEqualTo(String value) {
+            addCriterion("companyofnature <>", value, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureGreaterThan(String value) {
+            addCriterion("companyofnature >", value, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureGreaterThanOrEqualTo(String value) {
+            addCriterion("companyofnature >=", value, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureLessThan(String value) {
+            addCriterion("companyofnature <", value, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureLessThanOrEqualTo(String value) {
+            addCriterion("companyofnature <=", value, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureLike(String value) {
+            addCriterion("companyofnature like", value, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureNotLike(String value) {
+            addCriterion("companyofnature not like", value, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureIn(List<String> values) {
+            addCriterion("companyofnature in", values, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureNotIn(List<String> values) {
+            addCriterion("companyofnature not in", values, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureBetween(String value1, String value2) {
+            addCriterion("companyofnature between", value1, value2, "companyofnature");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyofnatureNotBetween(String value1, String value2) {
+            addCriterion("companyofnature not between", value1, value2, "companyofnature");
+            return (Criteria) this;
+        }
+
         public Criteria andHiredateIsNull() {
             addCriterion("hiredate is null");
             return (Criteria) this;

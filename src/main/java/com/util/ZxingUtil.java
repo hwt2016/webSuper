@@ -65,7 +65,7 @@ public class ZxingUtil {
 //    public static void main(String [] arg){
 //        try{
 //            String qrcodePath="C:\\user\\"+"13808955973"+".png";
-//            createQRCode("http://106.15.196.117:8088/index/registerByInvite?recommendPhone=13808955973", new File(qrcodePath));
+//            createQRCode("http://www.xiaoqiaojr/index/registerByInvite?recommendPhone=13808955973", new File(qrcodePath));
 //            System.out.println(readQRCode(qrcodePath));
 //        }catch(Exception e){
 //            e.printStackTrace();

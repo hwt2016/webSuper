@@ -75,7 +75,7 @@ public class AppHouseController {
     @ResponseBody
     public String appHouseAdd(@RequestBody HouseDO houseDO){
         System.out.println("添加一个新的房产");
-        if(houseDO.getUserid()==null||houseDO.getUserid().equals("")||houseDO.getNumofcertificate()==null||houseDO.getNumofcertificate().equals(""))
+        if(houseDO.getUserid()==null||houseDO.getUserid().equals(""))
             return "0";
         int userid=houseDO.getUserid();
         if(userService.IfExistsByUserId(userid)){

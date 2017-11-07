@@ -1,4 +1,3 @@
-<!--_meta 作为公共模版分离出去-->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -7,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="Bookmark" href="/favicon.ico" >
-    <link rel="Shortcut Icon" href="/favicon.ico" />
     <!--[if lt IE 9]>
     <script type="text/javascript" src="/lib/html5shiv.js"></script>
     <script type="text/javascript" src="/lib/respond.min.js"></script>
@@ -22,214 +19,228 @@
     <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <!--/meta 作为公共模版分离出去-->
-
-    <title>借贷信息展示</title>
+    <title>受理列表</title>
 </head>
 <body>
-<article class="page-container">
-    <form class="form form-horizontal" id="form-admin-add" action="/user/addOfService" method="post">
-        <fieldset>
-            <legend>用户基本信息</legend>
+<div class="page-container">
 
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">真实姓名：</label>
-                <label class="form-label col-xs-3 col-sm-3">$!userInfo.realname </label>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">手机：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!userInfo.phone</label>
-            </div>
+    <article class="page-container">
+        <form class="form form-horizontal" id="form-admin-add" action="/user/addOfService" method="post">
+            <fieldset>
+                <legend>用户基本信息</legend>
 
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">身份证号：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!userInfo.idcard</label>
-            </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">真实姓名：</label>
+                    <label class="form-label col-xs-3 col-sm-3">$!userInfo.realname </label>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">手机：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!userInfo.phone</label>
+                </div>
 
-
-        </fieldset>
-
-        <br>
-
-
-
-        <fieldset>
-            <legend>贷款追踪信息</legend>
-            <form  id="form-admin-add" class="form form-horizontal" >
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">放款金额：</label>
-                <label class="form-label col-xs-3 col-sm-3">$!loanTacking.loanamount 元 </label>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">产品：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanTacking.product</label>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">利润：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanTacking.profit</label>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">最新状态：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanTacking.status</label>
-            </div>
-
-                <div style="margin-left: 20%;margin-top: 30px;">
-                    <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                        <a style="border-radius:4px;padding:4px 12px;color:#fff;background-color:#5a98de;border-color:#5a98de;border: solid 1px #ddd;" class="ml-5" onClick="loanTrackingModify('修改','/loanTracking/loanTrackingModify?loantrackingid=$!loanTacking.id','$!loanTacking.id','600','500')" href="javascript:;" title="贷款追踪信息修改">修改</a>
-                    </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">身份证号：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!userInfo.idcard</label>
                 </div>
 
 
-        </fieldset>
+            </fieldset>
 
-        <br>
-
-        <fieldset>
-            <legend>贷款信息</legend>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">身份证正面：</label>
-                <label class="form-label col-xs-4 col-sm-3">
-                    <a style="text-decoration:none" class="ml-5" onClick="idCardRead('身份证正面查看','$!loanInfo.idcardfrontpic')" title="查看">查看</a>
-                </label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">身份证反面：</label>
-                <label class="form-label col-xs-4 col-sm-3">
-                    <a style="text-decoration:none" class="ml-5" onClick="idCardRead('身份证反面查看','$!loanInfo.idcardbackpic')" title="查看">查看</a>
-                </label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">性别：</label>
-                <label class="form-label col-xs-4 col-sm-3">
-                    #if($!{loanInfo.sex} =='F' ) 已婚 #end
-                    #if($!{loanInfo.sex} =='FM' ) 未婚 #end
-                </label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">婚姻状况：</label>
-                <label class="form-label col-xs-4 col-sm-3">
-                    #if($!{loanInfo.marriage} ==1 ) 已婚 #end
-                    #if($!{loanInfo.marriage} ==2 ) 未婚 #end
-                    #if($!{loanInfo.marriage} ==3 ) 离异 #end
-                    #if($!{loanInfo.marriage} ==4 ) 其他 #end
-                </label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">子女个数：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.countofchildren</label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">最高学历：</label>
-                <label class="form-label col-xs-4 col-sm-3">
-                    #if($!{loanInfo.education} ==1 ) 高中以下 #end
-                    #if($!{loanInfo.education} ==2 ) 技师     #end
-                    #if($!{loanInfo.education} ==3 ) 专科     #end
-                    #if($!{loanInfo.education} ==4 ) 本科     #end
-                    #if($!{loanInfo.education} ==5 ) 研究生   #end
-                    #if($!{loanInfo.education} ==6 ) 博士     #end
-
-                </label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">现住址：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.address</label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">单位名称：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.company</label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">单位地址：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.companyaddress</label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">职务：</label>
-                <label class="form-label col-xs-4 col-sm-3">
-                    #if($!{loanInfo.position} ==1 ) 基层员工       #end
-                    #if($!{loanInfo.position} ==2 ) 初级管理者     #end
-                    #if($!{loanInfo.position} ==3 ) 中级管理者     #end
-                    #if($!{loanInfo.position} ==4 ) 高级管理者     #end
-                    #if($!{loanInfo.position} ==5 ) 法人或股东     #end
-                </label>
-            </div>
+            <br>
 
 
 
+            <fieldset>
+                <legend>贷款追踪信息</legend>
+                <form  id="form-admin-add" class="form form-horizontal" >
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">放款金额：</label>
+                        <label class="form-label col-xs-3 col-sm-3">$!loanTacking.loanamount 元 </label>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">产品：</label>
+                        <label class="form-label col-xs-4 col-sm-3">$!loanTacking.product</label>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">利润：</label>
+                        <label class="form-label col-xs-4 col-sm-3">$!loanTacking.profit</label>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">最新状态：</label>
+                        <label class="form-label col-xs-4 col-sm-3">$!loanTacking.status</label>
+                    </div>
 
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">个人占股比例：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.shareratio</label>
-            </div>
-
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">现行业从业年限：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.ageofwork</label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">单位年收入流水：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.annualincome</label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">贷款金额：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.loanamount 万</label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">贷款期限：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.loanterm</label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">期望贷款形式：</label>
-                <label class="form-label col-xs-4 col-sm-3">
-                    #if($!{loanInfo.expectedloanform} ==1 ) 信用          #end
-                    #if($!{loanInfo.expectedloanform} ==2 ) 抵押          #end
-                    #if($!{loanInfo.expectedloanform} ==3 ) 信用+抵押     #end
-                </label>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">预估额度：</label>
-                <label class="form-label col-xs-4 col-sm-3">$!loanInfo.estimatedloan 万</label>
-            </div>
+                    <div style="margin-left: 20%;margin-top: 30px;">
+                        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                            <a style="border-radius:4px;padding:4px 12px;color:#fff;background-color:#5a98de;border-color:#5a98de;border: solid 1px #ddd;" class="ml-5" onClick="loanTrackingModify('修改','/loanTracking/loanTrackingModify?loantrackingid=$!loanTacking.id','$!loanTacking.id','600','500')" href="javascript:;" title="贷款追踪信息修改">修改</a>
+                        </div>
+                    </div>
 
 
+            </fieldset>
 
-        </fieldset>
-        <br>
+            <br>
 
-    </form>
-</article>
+            <fieldset>
+                <legend>贷款信息</legend>
 
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">身份证正面：</label>
+                    <label class="form-label col-xs-4 col-sm-3">
+                        <a style="text-decoration:none" class="ml-5" onClick="idCardRead('身份证正面查看','$!loanInfo.idcardfrontpic')" title="查看">查看</a>
+                    </label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">身份证反面：</label>
+                    <label class="form-label col-xs-4 col-sm-3">
+                        <a style="text-decoration:none" class="ml-5" onClick="idCardRead('身份证反面查看','$!loanInfo.idcardbackpic')" title="查看">查看</a>
+                    </label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">性别：</label>
+                    <label class="form-label col-xs-4 col-sm-3">
+                        #if($!{loanInfo.sex} =='F' ) 已婚 #end
+                        #if($!{loanInfo.sex} =='FM' ) 未婚 #end
+                    </label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">婚姻状况：</label>
+                    <label class="form-label col-xs-4 col-sm-3">
+                        #if($!{loanInfo.marriage} ==1 ) 已婚 #end
+                        #if($!{loanInfo.marriage} ==2 ) 未婚 #end
+                        #if($!{loanInfo.marriage} ==3 ) 离异 #end
+                        #if($!{loanInfo.marriage} ==4 ) 其他 #end
+                    </label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">子女个数：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.countofchildren</label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">最高学历：</label>
+                    <label class="form-label col-xs-4 col-sm-3">
+                        #if($!{loanInfo.education} ==1 ) 高中以下 #end
+                        #if($!{loanInfo.education} ==2 ) 技师     #end
+                        #if($!{loanInfo.education} ==3 ) 专科     #end
+                        #if($!{loanInfo.education} ==4 ) 本科     #end
+                        #if($!{loanInfo.education} ==5 ) 研究生   #end
+                        #if($!{loanInfo.education} ==6 ) 博士     #end
+
+                    </label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">现住址：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.address</label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">单位名称：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.company</label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">单位地址：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.companyaddress</label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">职务：</label>
+                    <label class="form-label col-xs-4 col-sm-3">
+                        #if($!{loanInfo.position} ==1 ) 基层员工       #end
+                        #if($!{loanInfo.position} ==2 ) 初级管理者     #end
+                        #if($!{loanInfo.position} ==3 ) 中级管理者     #end
+                        #if($!{loanInfo.position} ==4 ) 高级管理者     #end
+                        #if($!{loanInfo.position} ==5 ) 法人或股东     #end
+                    </label>
+                </div>
+
+
+
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">个人占股比例：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.shareratio</label>
+                </div>
+
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">现行业从业年限：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.ageofwork</label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">单位年收入流水：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.annualincome</label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">贷款金额：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.loanamount 万</label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">贷款期限：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.loanterm</label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">期望贷款形式：</label>
+                    <label class="form-label col-xs-4 col-sm-3">
+                        #if($!{loanInfo.expectedloanform} ==1 ) 信用          #end
+                        #if($!{loanInfo.expectedloanform} ==2 ) 抵押          #end
+                        #if($!{loanInfo.expectedloanform} ==3 ) 信用+抵押     #end
+                    </label>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-3">预估额度：</label>
+                    <label class="form-label col-xs-4 col-sm-3">$!loanInfo.estimatedloan 万</label>
+                </div>
+
+
+
+            </fieldset>
+            <br>
+
+        </form>
+    </article>
+</div>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript" src="/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script>
-<script type="text/javascript" src="/lib/webuploader/0.1.5/webuploader.min.js"></script>
-<script type="text/javascript" src="/lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
+    $('.table-sort').dataTable({
+        "aaSorting": [[ 0, "asc" ]],//默认第几个排序
+        "bStateSave": true,//状态保存
+        "pading":false,
+        "aoColumnDefs": [
+            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+            {"orderable":false,"aTargets":[4]}// 不参与排序的列
+        ]
+    });
+
+
+    /*受理信息修改*/
+    function acceptModify(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*贷款追踪信息修改*/
+    function loanTrackingModify(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
 
     /*信息展示*/
     function idCardRead(title,url){
@@ -240,58 +251,39 @@
         });
         layer.full(index);
     }
-    /*贷款追踪信息修改*/
-    function loanTrackingModify(title,url,id,w,h){
-        layer_show(title,url,w,h);
+    /*信息展示*/
+    function loanInfoRead(title,url,id,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+    /*受理处理*/
+    function acceptCope(obj,acceptid){
+        layer.confirm('确认通过吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '/accept/acceptCope',
+                contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+                data:{acceptid:acceptid},
+                success: function(data){
+                    $(obj).parents("tr").remove();
+                    if(data=="true")
+                        layer.msg("处理成功",{icon:1,time:1000});
+                    else
+                        layer.msg("处理失败",{icon:2,time:1000});
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
     }
 
-    $(function(){
-        $('.skin-minimal input').iCheck({
-            checkboxClass: 'icheckbox-blue',
-            radioClass: 'iradio-blue',
-            increaseArea: '20%'
-        });
 
-        $("#form-admin-add").validate({
-            rules:{
-                realname:{
-                    required:true,
-                    minlength:1,
-                    maxlength:16
-                },
-                phone:{
-                    required:true,
-                    isPhone:true,
-                },
-                cardnumber:{
-                    isCardNumber:true,
-                },
-            },
-            onkeyup:false,
-            focusCleanup:true,
-            success:"valid",
-            submitHandler:function(form){
-                $(form).ajaxSubmit({
-                    type: 'post',
-                    url: "/user/addOfService" ,
-                    success: function(data){
-                        if(data=="false")
-                           .});
-                        else
-                            layer.msg(data,{icon:1,time:1000})
-                    },
-                    error: function(XmlHttpRequest, textStatus, errorThrown){
-                        layer.msg('error!',{icon:1,time:1000});
-                    }
-                });
-                var index = parent.layer.getFrameIndex(window.name);
-                parent.$('.btn-refresh').click();
-                parent.layer.close(index);
-            }
-        });
 
-    });
 </script>
-<!--/请在上方写此页面业务相关的脚本-->
 </body>
 </html>

@@ -48,9 +48,9 @@
             <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
         <!--</table>-->
 
-        <!--<table tableName="d_loan" domainObjectName="LoanDO">-->
-            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
-        <!--</table>-->
+        <table tableName="d_loan" domainObjectName="LoanDO">
+            <generatedKey column="id" sqlStatement="mysql" identity="true" />
+        </table>
 
         <!--<table tableName="d_service" domainObjectName="ServiceDO">-->
             <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
@@ -110,9 +110,9 @@
         <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
         <!--</table>-->
 
-        <table tableName="d_version"     domainObjectName="VersionDO">
-            <generatedKey column="id" sqlStatement="mysql" identity="true" />
-        </table>
+        <!--<table tableName="d_version"     domainObjectName="VersionDO">-->
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+        <!--</table>-->
 
     </context>
 </generatorConfiguration>
