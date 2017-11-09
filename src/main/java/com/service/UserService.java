@@ -1,22 +1,16 @@
 package com.service;
 
-import com.constant.Constant;
 import com.em.GradeEnum;
 import com.em.StatusEnum;
 import com.entity.AscriptionDO;
 import com.entity.UserDO;
 import com.entity.UserDOExample;
 import com.entity.UserIncomeDO;
-import com.google.zxing.WriterException;
 import com.mapper.UserDOMapper;
-import com.oss.PostObject;
-import com.util.ZxingUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -201,26 +195,26 @@ public class UserService {
                 userDO.setGrade(GradeEnum.C.code());
                 if(this.IfExists(userDO))
                     return "2";//新用户已注册
-                //生成二维码，并上传到阿里OSS上
-                try {
-                    //上传到OSS地址
-                    String key="user/"+userDO.getPhone()+"/qrcode.png";
-                    //生成二维码本地路径
-                    String qrcodePath= Constant.USER_LOCAL_DIR+userDO.getPhone()+".png";
-                    //生成二维码
-                    ZxingUtil.createQRCode(Constant.INVITE+userDO.getPhone(), new File(qrcodePath));
-                    //上传到OSS
-                    PostObject ossPostObject = new PostObject();
-                    ossPostObject.post(key,qrcodePath);
-                    //更新新用户的邀请链接
-                    userDO.setInvitelink(Constant.HOST_USER+userDO.getPhone()+"/qrcode.png");
-                } catch (WriterException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                //生成二维码，并上传到阿里OSS上
+//                try {
+//                    //上传到OSS地址
+//                    String key="user/"+userDO.getPhone()+"/qrcode.png";
+//                    //生成二维码本地路径
+//                    String qrcodePath= Constant.USER_LOCAL_DIR+userDO.getPhone()+".png";
+//                    //生成二维码
+//                    ZxingUtil.createQRCode(Constant.INVITE+userDO.getPhone(), new File(qrcodePath));
+//                    //上传到OSS
+//                    PostObject ossPostObject = new PostObject();
+//                    ossPostObject.post(key,qrcodePath);
+//                    //更新新用户的邀请链接
+//                    userDO.setInvitelink(Constant.HOST_USER+userDO.getPhone()+"/qrcode.png");
+//                } catch (WriterException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
                 if(this.insert(userDO)){
 
                     userDO=this.selectUserByPhoneNum(userDO.getPhone());
@@ -300,26 +294,26 @@ public class UserService {
                 userDO.setGrade(GradeEnum.B.code());
                 if(this.IfExists(userDO))
                     return "2";//新用户已注册
-                //生成二维码，并上传到阿里OSS上
-                try {
-                    //上传到OSS地址
-                    String key="user/"+userDO.getPhone()+"/qrcode.png";
-                    //生成二维码本地路径
-                    String qrcodePath= Constant.USER_LOCAL_DIR+userDO.getPhone()+".png";
-                    //生成二维码
-                    ZxingUtil.createQRCode(Constant.INVITE+userDO.getPhone(), new File(qrcodePath));
-                    //上传到OSS
-                    PostObject ossPostObject = new PostObject();
-                    ossPostObject.post(key,qrcodePath);
-                    //更新新用户的邀请链接
-                    userDO.setInvitelink(Constant.HOST_USER+userDO.getPhone()+"/qrcode.png");
-                } catch (WriterException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                //生成二维码，并上传到阿里OSS上
+//                try {
+//                    //上传到OSS地址
+//                    String key="user/"+userDO.getPhone()+"/qrcode.png";
+//                    //生成二维码本地路径
+//                    String qrcodePath= Constant.USER_LOCAL_DIR+userDO.getPhone()+".png";
+//                    //生成二维码
+//                    ZxingUtil.createQRCode(Constant.INVITE+userDO.getPhone(), new File(qrcodePath));
+//                    //上传到OSS
+//                    PostObject ossPostObject = new PostObject();
+//                    ossPostObject.post(key,qrcodePath);
+//                    //更新新用户的邀请链接
+//                    userDO.setInvitelink(Constant.HOST_USER+userDO.getPhone()+"/qrcode.png");
+//                } catch (WriterException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
                 if(this.insert(userDO)){
 
                     userDO=this.selectUserByPhoneNum(userDO.getPhone());
@@ -394,29 +388,29 @@ public class UserService {
             userDO.setGrade(GradeEnum.C.code());
             if(this.IfExists(userDO))
                 return "2";//新用户已注册
-            //生成二维码，并上传到阿里OSS上
-            try {
-                //上传到OSS地址
-                String key="user/"+userDO.getPhone()+"/qrcode.png";
-                //生成二维码本地路径
-                String qrcodePath= Constant.USER_LOCAL_DIR+userDO.getPhone()+".png";
-                //生成二维码
-                ZxingUtil.createQRCode(Constant.INVITE+userDO.getPhone(), new File(qrcodePath));
-                //上传到OSS
-                PostObject ossPostObject = new PostObject();
-                ossPostObject.post(key,qrcodePath);
-                //更新新用户的邀请链接
-                userDO.setInvitelink(Constant.HOST_USER+userDO.getPhone()+"/qrcode.png");
-            } catch (WriterException e) {
-                e.printStackTrace();
-                return "0";
-            } catch (IOException e) {
-                e.printStackTrace();
-                return "0";
-            } catch (Exception e) {
-                e.printStackTrace();
-                return "0";
-            }
+//            //生成二维码，并上传到阿里OSS上
+//            try {
+//                //上传到OSS地址
+//                String key="user/"+userDO.getPhone()+"/qrcode.png";
+//                //生成二维码本地路径
+//                String qrcodePath= Constant.USER_LOCAL_DIR+userDO.getPhone()+".png";
+//                //生成二维码
+//                ZxingUtil.createQRCode(Constant.INVITE+userDO.getPhone(), new File(qrcodePath));
+//                //上传到OSS
+//                PostObject ossPostObject = new PostObject();
+//                ossPostObject.post(key,qrcodePath);
+//                //更新新用户的邀请链接
+//                userDO.setInvitelink(Constant.HOST_USER+userDO.getPhone()+"/qrcode.png");
+//            } catch (WriterException e) {
+//                e.printStackTrace();
+//                return "0";
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                return "0";
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//                return "0";
+//            }
             if(this.insert(userDO)) {
 
                 userDO = this.selectUserByPhoneNum(userDO.getPhone());
