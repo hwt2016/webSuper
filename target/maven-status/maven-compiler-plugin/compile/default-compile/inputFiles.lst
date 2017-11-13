@@ -60,6 +60,7 @@ H:\xqjr\webSuper\src\main\java\com\entity\ReplyDO.java
 H:\xqjr\webSuper\src\main\java\com\entity\ApprovalDO.java
 H:\xqjr\webSuper\src\main\java\com\entity\PeriodDO.java
 H:\xqjr\webSuper\src\main\java\com\mapper\VersionDOMapper.java
+H:\xqjr\webSuper\src\main\java\com\controller\AnnouncementController.java
 H:\xqjr\webSuper\src\main\java\com\controller\HouseController.java
 H:\xqjr\webSuper\src\main\java\com\controller\AdminController.java
 H:\xqjr\webSuper\src\main\java\com\appController\AppLoanStatisticController.java

@@ -1,0 +1,4 @@
+<H2 style="text-align:center">$!announcementnew.title </H2>
+<div style="text-indent:35px">
+    <p>$!announcementnew.content</p>
+</div>

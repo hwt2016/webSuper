@@ -1,5 +1,10 @@
 server:
   port: 80
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
+    port-header: X-Forwarded-Port
+  use-forward-headers: true
 spring:
   velocity:
     charset: UTF-8
@@ -9,7 +14,7 @@ spring:
     # toolbox-config-location: /WEB-INF/toolbox.xml
   datasource:
     name: commerce
-    url: jdbc:mysql://127.0.0.1:3306/xqjr?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/qd_xqjr?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: hwt@xqjr$666
     # 使用druid数据源
