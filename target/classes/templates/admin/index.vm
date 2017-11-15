@@ -127,6 +127,7 @@
                     <li><a data-href="/announcement/announcementInsert" data-title="公告新增" href="javascript:void(0)">公告修改</a></li>
                     <li><a data-href="/announcement/protocolRead" data-title="协议查看" href="javascript:void(0)">协议查看</a></li>
                     <li><a data-href="/announcement/aboutUsRead" data-title="公司简介" href="javascript:void(0)">公司简介</a></li>
+                    <li><a data-href="/announcement/announcePicAdd" data-title="宣传图片" href="javascript:void(0)">宣传图片</a></li>
 
                 </ul>
             </dd>

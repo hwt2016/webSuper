@@ -66,6 +66,12 @@ public class AnnouncementController {
             return "false";
     }
 
+    @RequestMapping(value = "/announcePicAdd",method = RequestMethod.GET)
+    public String announcePicAdd(){
+
+        return "admin/announcement/announcePicAdd";
+    }
+
 
 
 }

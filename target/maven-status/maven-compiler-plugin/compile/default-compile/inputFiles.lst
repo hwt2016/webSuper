@@ -11,6 +11,7 @@ H:\xqjr\webSuper\src\main\java\com\entity\LoanDOExample.java
 H:\xqjr\webSuper\src\main\java\com\entity\AreaDOExample.java
 H:\xqjr\webSuper\src\main\java\com\convert\DateConvert.java
 H:\xqjr\webSuper\src\main\java\com\mapper\UserDOMapper.java
+H:\xqjr\webSuper\src\main\java\com\mapper\AnnouncementDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\mapper\VehicleDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\entity\ReplyDOExample.java
 H:\xqjr\webSuper\src\main\java\com\entity\ApprovalDOExample.java
@@ -128,6 +129,7 @@ H:\xqjr\webSuper\src\main\java\com\em\CompanyEnum.java
 H:\xqjr\webSuper\src\main\java\com\controller\PeriodController.java
 H:\xqjr\webSuper\src\main\java\com\mapper\AscriptionDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\controller\VehicleController.java
+H:\xqjr\webSuper\src\main\java\com\entity\AnnouncementDO.java
 H:\xqjr\webSuper\src\main\java\com\service\VUserIncomeService.java
 H:\xqjr\webSuper\src\main\java\com\service\LoanStatisticService.java
 H:\xqjr\webSuper\src\main\java\com\controller\LoanTrackingController.java
@@ -136,3 +138,5 @@ H:\xqjr\webSuper\src\main\java\com\service\VLoanInfoStatusService.java
 H:\xqjr\webSuper\src\main\java\com\util\SmsUtil.java
 H:\xqjr\webSuper\src\main\java\com\mapper\VUserIncomeDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\entityConvert\MonitorDOConvert.java
+H:\xqjr\webSuper\src\main\java\com\entity\AnnouncementDOExample.java
+H:\xqjr\webSuper\src\main\java\com\service\AnnouncementService.java
