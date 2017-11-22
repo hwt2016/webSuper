@@ -86,6 +86,23 @@ public class AppHouseController {
         }
     }
 
+
+    /**
+     * 根据houseid删除房屋信息
+     * @param houseid
+     * @return 1正常删除  2删除异常
+     */
+    @RequestMapping(value = "/appHouseDel",method = RequestMethod.POST)
+    @ResponseBody
+    public String appHouseDel(int houseid){
+        System.out.println("删除一个房产");
+        if(houseService.delete(houseid))
+            return "1";
+        else
+            return "2";
+
+    }
+
 //    @RequestMapping(value = "/test",method = RequestMethod.GET)
 //    @ResponseBody
 //    public String test(){

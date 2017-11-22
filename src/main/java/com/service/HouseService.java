@@ -54,4 +54,19 @@ public class HouseService {
         return true;
     }
 
+
+    //************** delete  删除*************************************************
+
+    //根据houseid删除一个房产
+    public boolean delete(int houseid){
+        try{
+            houseDOMapper.deleteByPrimaryKey(houseid);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
 }

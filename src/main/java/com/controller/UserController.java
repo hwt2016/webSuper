@@ -106,6 +106,8 @@ public class UserController {
         //用户表信息补全
         //设置用户生日
         userDO.setBirthday(birthday);
+        //设置密码
+        userDO.setPassword(MD5Util.GetMD5Code(userDO.getPassword()));
         //设置等级
         userDO.setGrade(GradeEnum.C.code());
         //设置状态为跟进

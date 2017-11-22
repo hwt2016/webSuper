@@ -33,7 +33,7 @@ public class PostObject {
     private String accessKeyId = Constant.ACCESS_ID;
     private String accessKeySecret = Constant.ACCESS_KEY;
     // 你之前创建的bucket，确保这个bucket已经创建
-    private String bucketName = "xqjr";
+    private String bucketName = Constant.BUCKET_NAME;
     // 上传文件后的object名称
 
 

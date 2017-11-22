@@ -42,6 +42,12 @@ public class AnnouncementController {
         return "admin/announcement/aboutUsRead";
     }
 
+    //网点查看
+    @RequestMapping(value = "/netSiteRead",method = RequestMethod.GET)
+    public String netSiteRead(){
+
+        return "admin/announcement/netSiteRead";
+    }
 
     /**
      * 插入一条新的公告信息

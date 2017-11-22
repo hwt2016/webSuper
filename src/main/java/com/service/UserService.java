@@ -139,9 +139,8 @@ public class UserService {
 
     //======     delete  删除操作=================================================================================================
     public boolean delete(UserDO userDO){
-        UserDO userDO1 = selectUserByPhone(userDO);
-        if(userDO1!=null)
-            userDOMapper.deleteByPrimaryKey(userDO1.getId());
+        if(this.IfExistsByUserId(userDO.getId()))
+            userDOMapper.deleteByPrimaryKey(userDO.getId());
         else
             return false;
         return true;

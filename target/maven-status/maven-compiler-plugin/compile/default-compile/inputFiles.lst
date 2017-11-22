@@ -91,6 +91,7 @@ H:\xqjr\webSuper\src\main\java\com\service\LoanTrackingService.java
 H:\xqjr\webSuper\src\main\java\com\service\UserInfoService.java
 H:\xqjr\webSuper\src\main\java\com\controller\ReplyController.java
 H:\xqjr\webSuper\src\main\java\com\mapper\LoanTrackingDOMapper.java
+H:\xqjr\webSuper\src\main\java\com\appController\AppAnnouncementController.java
 H:\xqjr\webSuper\src\main\java\com\mapper\MonitorDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\oss\StsService.java
 H:\xqjr\webSuper\src\main\java\com\entity\VehicleDO.java

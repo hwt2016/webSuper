@@ -34,6 +34,25 @@ public class AnnouncementService {
     }
 
     /**
+     * 获取最新的count公告
+     * @param count
+     * @return
+     */
+    public List<AnnouncementDO> announcementReadList(int count){
+        AnnouncementDOExample announcementDOExample=new AnnouncementDOExample();
+        AnnouncementDOExample.Criteria criteria = announcementDOExample.createCriteria();
+        announcementDOExample.setLimitStart(0);
+        announcementDOExample.setLimitEnd(count);
+        announcementDOExample.setOrderByClause("id DESC");
+        List<AnnouncementDO> announcementDOS = announcementDOMapper.selectByExample(announcementDOExample);
+        if(announcementDOS!=null)
+            return announcementDOS;
+
+        return null;
+    }
+
+
+    /**
      *根据announcementd修改公告信息
      * @param announcementDO
      * @return
