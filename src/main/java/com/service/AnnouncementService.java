@@ -81,4 +81,19 @@ public class AnnouncementService {
         }
     }
 
+    /**
+     * 公告删除
+     * @param id
+     * @return
+     */
+    public boolean announcemntDel(int id){
+        try {
+            announcementDOMapper.deleteByPrimaryKey(id);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

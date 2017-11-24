@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * Created by sa on 2017-11-13.
  */
@@ -72,12 +74,34 @@ public class AnnouncementController {
             return "false";
     }
 
+    //TODO 公告图片管理
     @RequestMapping(value = "/announcePicAdd",method = RequestMethod.GET)
     public String announcePicAdd(){
 
         return "admin/announcement/announcePicAdd";
     }
 
+    //获取最新三条公告
+    @RequestMapping(value = "/announcementReadList",method = RequestMethod.GET)
+    public String announcementReadList(ModelMap modelMap){
+        List<AnnouncementDO> announcementDOS = announcementService.announcementReadList(3);
+        modelMap.addAttribute("announcementDOS",announcementDOS);
+        return "admin/announcement/announcementReadList";
+    }
+
+    /**
+     *删除公告
+     * @param id (公告id :announcementid)
+     * @return 删除成功  删除失败
+     */
+    @RequestMapping(value = "/announcemntDel",method = RequestMethod.POST)
+    @ResponseBody
+    public String announcemntDel(int id){
+        if(announcementService.announcemntDel(id)){
+            return "成功";
+        }
+        return "失败";
+    }
 
 
 }

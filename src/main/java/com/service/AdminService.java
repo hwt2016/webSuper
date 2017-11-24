@@ -1,12 +1,13 @@
 package com.service;
 
+import com.em.StatusEnum;
 import com.entity.AdminDO;
-import com.entity.UserInfoDO;
+import com.entity.AdminDOExample;
 import com.mapper.AdminDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.util.List;
 
 /**
  * Created by sa on 2017-05-31.
@@ -21,50 +22,68 @@ public class AdminService {
     @Autowired
     private UserInfoService userInfoService;
 
+    //密码修改
     public boolean codeModify(AdminDO adminDO){
-        adminDOMapper.updateByPrimaryKeySelective(adminDO);
-        return true;
-    }
-
-    public void insert(AdminDO adminDO){
-
-
-        adminDOMapper.insert(adminDO);
-
-    }
-
-    public String init(){
-        try {
-
-            UserInfoDO userInfoDO = new UserInfoDO();
-            userInfoDO.setUserid(2);
-            userInfoDO.setCreatetime(new Date(System.currentTimeMillis()));
-            userInfoDO.setUpdatetime(new Date(System.currentTimeMillis()));
-            userInfoDO.setStatus("正常");
-            userInfoService.insert(userInfoDO);
-
-
-            AdminDO adminDO = new AdminDO();
-            adminDO.setAdminname("11");
-            adminDO.setPassword("123");
-            adminDO.setCreatetime(new Date(System.currentTimeMillis()));
-            adminDO.setUpdatetime(new Date(System.currentTimeMillis()));
-            adminDO.setStatus("正常");
-            this.insert(adminDO);
-
-            return "1";
-
-
-//            adminDO.setAdminname("11111111");
-//            adminDO.setPassword("123");
-//            adminDO.setCreatetime(new Date(System.currentTimeMillis()));
-//            adminDO.setUpdatetime(new Date(System.currentTimeMillis()));
-//            adminDO.setStatus("正常");
-//            adminService.insert(adminDO);
+        try{
+            adminDOMapper.updateByPrimaryKeySelective(adminDO);
+            return true;
         }catch (Exception e){
             e.printStackTrace();
-            return "2";
+            return false;
+        }
+
+    }
+
+    //添加一位管理员
+    public boolean insert(AdminDO adminDO){
+        try{
+            adminDOMapper.insert(adminDO);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+
+
+    }
+
+    //判断管理员是否存在
+    public boolean ifExists(AdminDO adminDO){
+          try {
+              AdminDOExample adminDOExample = new AdminDOExample();
+              AdminDOExample.Criteria criteria =adminDOExample.createCriteria();
+              criteria.andAdminnameEqualTo(adminDO.getAdminname());
+              criteria.andStatusEqualTo(StatusEnum.NORMAL.code());
+              List<AdminDO> adminDOList = adminDOMapper.selectByExample(adminDOExample);
+              if(adminDOList.size()!=0)
+                  return true;
+              else
+                  return false;
+          }catch (Exception e){
+              e.printStackTrace();
+              return false;
+          }
+    }
+
+    //根据用户名提取管理员账号
+    public AdminDO selectAdminByAdminName(String adminname){
+        try {
+            AdminDOExample adminDOExample = new AdminDOExample();
+            AdminDOExample.Criteria criteria =adminDOExample.createCriteria();
+            criteria.andAdminnameEqualTo(adminname);
+            criteria.andStatusEqualTo(StatusEnum.NORMAL.code());
+            List<AdminDO> adminDOList = adminDOMapper.selectByExample(adminDOExample);
+            if(adminDOList.size()!=0)
+                return adminDOList.get(0);
+            else
+                return null;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
     }
+
+
+
 
 }

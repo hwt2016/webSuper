@@ -1,7 +1,9 @@
 package com.controller;
 
+import com.alibaba.druid.util.StringUtils;
 import com.entity.AdminDO;
 import com.entity.UserDO;
+import com.service.AdminService;
 import com.service.AscriptionService;
 import com.service.UserIncomeService;
 import com.service.UserService;
@@ -32,6 +34,9 @@ public class IndexController {
     @Autowired
     private UserIncomeService userIncomeService;
 
+    @Autowired
+    private AdminService adminService;
+
     //获取登录界面
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String login(){
@@ -43,9 +48,17 @@ public class IndexController {
     //登录跳转
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(AdminDO adminDO, ModelMap modelMap,HttpSession session){
-        //TODO 后期需要修改
-        System.out.println("adminName:"+adminDO.getAdminname()+"  password:"+adminDO.getPassword()+"1234");
-        return "admin/index";
+        if(StringUtils.isEmpty(adminDO.getAdminname())){
+
+            return "admin/login";
+        }
+        if(adminService.ifExists(adminDO)){
+            AdminDO adminDOselect = adminService.selectAdminByAdminName(adminDO.getAdminname());
+            if (adminDOselect.getPassword().equals(adminDO.getPassword())&&adminDO.getPassword().length()!=0){
+                return "admin/index";
+            }
+        }
+        return "admin/login";
     }
 
     /**
