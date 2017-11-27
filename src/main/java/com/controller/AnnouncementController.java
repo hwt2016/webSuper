@@ -44,6 +44,13 @@ public class AnnouncementController {
         return "admin/announcement/aboutUsRead";
     }
 
+    //客户隐私政策
+    @RequestMapping(value = "/customerPrivatePolicy",method = RequestMethod.GET)
+    public String customerPrivatePolicy(){
+
+        return "admin/announcement/customerPrivatePolicy";
+    }
+
     //网点查看
     @RequestMapping(value = "/netSiteRead",method = RequestMethod.GET)
     public String netSiteRead(){

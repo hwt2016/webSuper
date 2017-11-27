@@ -14,7 +14,7 @@ spring:
     # toolbox-config-location: /WEB-INF/toolbox.xml
   datasource:
     name: commerce
-    url: jdbc:mysql://127.0.0.1:3306/xqjr?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/qd_xqjr?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: hwt@xqjr$666
     # 使用druid数据源
