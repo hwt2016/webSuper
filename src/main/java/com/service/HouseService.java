@@ -5,6 +5,7 @@ import com.entity.HouseDOExample;
 import com.mapper.HouseDOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -48,16 +49,23 @@ public class HouseService {
     //************** update  更新*************************************************
 
     //根据houseid更新房产信息
+    @Transactional
     public boolean update(HouseDO houseDO){
-        houseDO.setUpdatetime(new Date(System.currentTimeMillis()));
-        houseDOMapper.updateByPrimaryKeySelective(houseDO);
-        return true;
+        try {
+            houseDO.setUpdatetime(new Date(System.currentTimeMillis()));
+            houseDOMapper.updateByPrimaryKeySelective(houseDO);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
 
     //************** delete  删除*************************************************
 
     //根据houseid删除一个房产
+    @Transactional
     public boolean delete(int houseid){
         try{
             houseDOMapper.deleteByPrimaryKey(houseid);

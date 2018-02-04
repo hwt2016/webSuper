@@ -40,7 +40,9 @@ public class AreaController {
     @ResponseBody
     public String areaAdd(AreaDO areaDO){
       //System.out.println("province:"+areaDO.getProvince()+" city:"+areaDO.getCity()+"  dist:"+areaDO.getDistrict());
-        //TODO 需要验证地区是否已经存在
+        //TODO 需要验证
+        if(areaService.ifExists(areaDO))
+            return "该地区已存在";
         //设置状态当前时间
         areaDO.setCreatetime(new Date(System.currentTimeMillis()));
         //设置更新时间
@@ -49,8 +51,8 @@ public class AreaController {
         areaDO.setStatus(StatusEnum.NORMAL.code());
         //执行插入操作
         if(!areaService.insert(areaDO))
-            return "error";
-        return "success";
+            return "添加失败";
+        return "添加成功";
     }
 
     /*获取Area(状态正常）列表

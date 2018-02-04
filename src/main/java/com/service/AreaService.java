@@ -60,4 +60,23 @@ public class AreaService {
             return false;
     }
 
+    /**
+     * 判断地区是否已经添加
+     * @param areaDO
+     * @return
+     */
+    public boolean ifExists(AreaDO areaDO){
+        AreaDOExample areaDOExample =new AreaDOExample();
+        AreaDOExample.Criteria criteria =areaDOExample.createCriteria();
+        criteria.andCityEqualTo(areaDO.getCity());
+        criteria.andProvinceEqualTo(areaDO.getProvince());
+        criteria.andDistrictEqualTo(areaDO.getDistrict());
+        criteria.andStatusEqualTo(StatusEnum.NORMAL.code());    //选取状态为正常的area
+        List<AreaDO> areaDOS=areaDOMapper.selectByExample(areaDOExample);
+        if(areaDOS.size()!=0&&areaDOS!=null)
+            return true;
+        else
+            return false;
+    }
+
 }

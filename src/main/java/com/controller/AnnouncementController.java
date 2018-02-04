@@ -44,6 +44,14 @@ public class AnnouncementController {
         return "admin/announcement/aboutUsRead";
     }
 
+
+    //公司IOS简介查看
+    @RequestMapping(value = "/aboutUsReadIOS",method = RequestMethod.GET)
+    public String aboutUsReadIOS(){
+
+        return "admin/announcement/aboutUsReadIOS";
+    }
+
     //客户隐私政策
     @RequestMapping(value = "/customerPrivatePolicy",method = RequestMethod.GET)
     public String customerPrivatePolicy(){

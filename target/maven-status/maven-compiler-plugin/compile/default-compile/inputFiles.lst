@@ -1,6 +1,7 @@
 H:\xqjr\webSuper\src\main\java\com\mapper\VLoanInfoStatusDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\util\JsonConvert.java
 H:\xqjr\webSuper\src\main\java\com\mapper\AreaDOMapper.java
+H:\xqjr\webSuper\src\main\java\com\service\CreditCardService.java
 H:\xqjr\webSuper\src\main\java\com\service\LoanService.java
 H:\xqjr\webSuper\src\main\java\com\appController\AppSmsController.java
 H:\xqjr\webSuper\src\main\java\com\service\VersionService.java
@@ -8,6 +9,7 @@ H:\xqjr\webSuper\src\main\java\com\entity\VLoanInfoStatusDOExample.java
 H:\xqjr\webSuper\src\main\java\com\service\VehicleService.java
 H:\xqjr\webSuper\src\main\java\com\constant\Constant.java
 H:\xqjr\webSuper\src\main\java\com\entity\LoanDOExample.java
+H:\xqjr\webSuper\src\main\java\com\mapper\CreditCardDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\entity\AreaDOExample.java
 H:\xqjr\webSuper\src\main\java\com\convert\DateConvert.java
 H:\xqjr\webSuper\src\main\java\com\mapper\UserDOMapper.java
@@ -41,6 +43,7 @@ H:\xqjr\webSuper\src\main\java\com\entity\UserInfoDO.java
 H:\xqjr\webSuper\src\main\java\com\entity\LoanStatisticDO.java
 H:\xqjr\webSuper\src\main\java\com\entity\VUserIncomeDOExample.java
 H:\xqjr\webSuper\src\main\java\com\appController\AppLoanController.java
+H:\xqjr\webSuper\src\main\java\com\entity\CreditCardDOExample.java
 H:\xqjr\webSuper\src\main\java\com\util\MD5Util.java
 H:\xqjr\webSuper\src\main\java\com\convert\GradeConvert.java
 H:\xqjr\webSuper\src\main\java\com\entity\UserIncomeDO.java
@@ -50,6 +53,7 @@ H:\xqjr\webSuper\src\main\java\com\controller\AscriptionController.java
 H:\xqjr\webSuper\src\main\java\com\service\AcceptService.java
 H:\xqjr\webSuper\src\main\java\com\entity\AdminDO.java
 H:\xqjr\webSuper\src\main\java\com\mapper\UserIncomeDOMapper.java
+H:\xqjr\webSuper\src\main\java\com\entity\CreditCardDO.java
 H:\xqjr\webSuper\src\main\java\com\mapper\LoanStatisticDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\appController\AppLoanTrackingController.java
 H:\xqjr\webSuper\src\main\java\com\service\AdminService.java
@@ -64,6 +68,7 @@ H:\xqjr\webSuper\src\main\java\com\mapper\VersionDOMapper.java
 H:\xqjr\webSuper\src\main\java\com\controller\AnnouncementController.java
 H:\xqjr\webSuper\src\main\java\com\controller\HouseController.java
 H:\xqjr\webSuper\src\main\java\com\controller\AdminController.java
+H:\xqjr\webSuper\src\main\java\com\appController\AppCreditCardController.java
 H:\xqjr\webSuper\src\main\java\com\appController\AppLoanStatisticController.java
 H:\xqjr\webSuper\src\main\java\com\entityConvert\ApprovalDOConvert.java
 H:\xqjr\webSuper\src\main\java\com\entity\UserInfoDOExample.java
